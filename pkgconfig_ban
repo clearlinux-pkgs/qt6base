@@ -1,0 +1,21 @@
+# This file contains pkgconfig build requirements that get picked up
+# but are undesirable. One entry per line, no whitespace.
+QtGui
+QtTest
+directfb
+icu-le-hb
+aom
+mysqlclient
+wayland-kms
+tslib
+snappy
+rav1e
+gypsy
+libb2
+libgav1
+libmng
+libvmaf
+libvmaf_rc
+libyuv
+minizip
+sensord-qt5

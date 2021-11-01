@@ -1,0 +1,4 @@
+buildreq-qmake
+tensorflow_hub
+beignet-dev
+jasper-dev

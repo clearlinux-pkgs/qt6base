@@ -1,0 +1,4 @@
+-DQT_FEATURE_rpath=OFF
+-DQT_FEATURE_separate_debug_info=OFF
+-DQT_FEATURE_journald=ON
+-DBUILD_SHARED_LIBS=ON
