@@ -10,7 +10,7 @@ URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-every
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
 Group    : Development/Tools
-License  : AFL-2.0 APSL-2.0 Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-2-Clause-FreeBSD BSD-3-Clause BSD-3-Clause-Clear BSL-1.0 CC-BY-4.0 CC-BY-SA-3.0 CC0-1.0 ClArtistic EPL-1.0 FTL GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 HPND ICU IJG ISC LGPL-2.0 LGPL-2.1 LGPL-3.0 Libpng MIT MIT-feh MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 OFL-1.1 OpenSSL Public-Domain Python-2.0 SGI-B-2.0 Unlicense W3C-19980720 Zlib bzip2-1.0.6 libtiff xpp
+License  : AFL-2.0 APSL-2.0 Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-2-Clause-FreeBSD BSD-3-Clause BSD-3-Clause-Clear BSL-1.0 CC-BY-4.0 CC-BY-SA-3.0 CC0-1.0 ClArtistic EPL-1.0 FTL GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 HPND ICU IJG ISC LGPL-2.0 LGPL-2.1 LGPL-3.0 Libpng MIT MIT-feh MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 OFL-1.1 OpenSSL Python-2.0 SGI-B-2.0 Unlicense W3C-19980720 Zlib bzip2-1.0.6 libtiff
 Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-libexec = %{version}-%{release}
 Requires: qt6base-license = %{version}-%{release}
