@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 53
+Release  : 54
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
@@ -44,7 +44,6 @@ Requires: setuptools
 Requires: shared-mime-info
 Requires: six
 Requires: sympy
-Requires: tensorflow
 Requires: tox
 Requires: watchdog
 BuildRequires : Babel
@@ -248,7 +247,6 @@ BuildRequires : snappy-dev
 BuildRequires : sqlite-autoconf-dev
 BuildRequires : sympy
 BuildRequires : systemd-dev
-BuildRequires : tensorflow
 BuildRequires : tiff-dev
 BuildRequires : tox
 BuildRequires : utf8cpp-dev
@@ -336,7 +334,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635790051
+export SOURCE_DATE_EPOCH=1636417830
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -362,7 +360,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1635790051
+export SOURCE_DATE_EPOCH=1636417830
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
