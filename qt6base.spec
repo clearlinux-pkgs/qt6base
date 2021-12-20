@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 54
+Release  : 55
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
@@ -59,7 +59,6 @@ BuildRequires : Vulkan-Loader-dev
 BuildRequires : Vulkan-Tools
 BuildRequires : alsa-lib-dev
 BuildRequires : antlr4-python3-runtime
-BuildRequires : apache-ant
 BuildRequires : assimp-dev
 BuildRequires : bison-dev
 BuildRequires : black
