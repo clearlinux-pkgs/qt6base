@@ -25,8 +25,8 @@ libgssapi_krb5.so.2
 libgtk-3.so.0
 libharfbuzz.so.0
 libhunspell-1.7.so.0
-libicui18n.so.67
-libicuuc.so.67
+libicui18n.so.70
+libicuuc.so.70
 libinput.so.10
 libjpeg.so.62
 libm.so.6

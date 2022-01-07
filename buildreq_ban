@@ -3,3 +3,14 @@ tensorflow_hub
 beignet-dev
 jasper-dev
 tensorflow
+pypi(aioquic)
+pypi(argh)
+pypi(coloredlogs)
+pypi(google_cloud_storage)
+pypi(mozdebug)
+pypi(mozinfo)
+pypi(mozlog)
+pypi(path.py)
+pypi(pathtools)
+pypi(tensorflow)
+pypi(tensorflow_hub)
