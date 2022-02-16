@@ -1,0 +1,2 @@
+alias = qt-everywhere-src
+regex = ^6\..*
