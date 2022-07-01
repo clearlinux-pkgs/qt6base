@@ -5,12 +5,12 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 56
+Release  : 57
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
 Group    : Development/Tools
-License  : AFL-2.0 APSL-2.0 Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-2-Clause-FreeBSD BSD-3-Clause BSD-3-Clause-Attribution BSD-3-Clause-Clear BSL-1.0 CC-BY-4.0 CC-BY-SA-3.0 CC0-1.0 ClArtistic EPL-1.0 FTL GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 HPND ICU IJG ISC LGPL-2.0 LGPL-2.1 LGPL-3.0 Libpng MIT MIT-Opengroup MIT-feh MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 OFL-1.1 OpenSSL Python-2.0 SGI-B-2.0 Unlicense W3C-19980720 Zlib bzip2-1.0.6 libtiff
+License  : AFL-2.0 APSL-2.0 Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-2-Clause-FreeBSD BSD-3-Clause BSD-3-Clause-Attribution BSD-3-Clause-Clear BSL-1.0 CC-BY-4.0 CC-BY-SA-3.0 CC0-1.0 ClArtistic EPL-1.0 FTL GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 HPND ICU IJG ISC LGPL-2.0 LGPL-2.1 LGPL-3.0 Libpng MIT MIT-Opengroup MIT-feh MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 OFL-1.1 OpenSSL Public-Domain Python-2.0 SGI-B-2.0 Unlicense W3C-19980720 Zlib bzip2-1.0.6 libtiff xpp
 Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-libexec = %{version}-%{release}
 Requires: qt6base-license = %{version}-%{release}
@@ -69,12 +69,13 @@ BuildRequires : libxml2-dev
 BuildRequires : libxslt-bin
 BuildRequires : libxslt-dev
 BuildRequires : llvm-dev
+BuildRequires : llvm-staticdev
 BuildRequires : mariadb-dev
 BuildRequires : md4c-dev
 BuildRequires : mesa-dev
 BuildRequires : nodejs-dev
 BuildRequires : openblas
-BuildRequires : openjdk11
+BuildRequires : openjdk
 BuildRequires : openmpi-dev
 BuildRequires : openssl-dev
 BuildRequires : pacrunner-dev
@@ -210,6 +211,7 @@ BuildRequires : pypi(typing)
 BuildRequires : pypi(watchdog)
 BuildRequires : python3
 BuildRequires : python3-dev
+BuildRequires : qt6base-dev
 BuildRequires : qtbase-dev
 BuildRequires : qtbase-dev mesa-dev
 BuildRequires : qtremoteobjects-dev
@@ -303,14 +305,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641594575
+export SOURCE_DATE_EPOCH=1656718815
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
-export FCFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
-export FFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
-export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
+export CFLAGS="$CFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 %cmake .. -DQT_FEATURE_rpath=OFF \
 -DQT_FEATURE_separate_debug_info=OFF \
 -DQT_FEATURE_journald=ON \
@@ -329,7 +331,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1641594575
+export SOURCE_DATE_EPOCH=1656718815
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -1480,6 +1482,7 @@ cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/fp16/src/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/39e35ac9d71ad3567cdc9e06f0bfb0af0ab107ea
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/freetype-testing/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/freetype-testing/src/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/freetype/src/LICENSE.TXT %{buildroot}/usr/share/package-licenses/qt6base/4ddaa192f25581d05cb4d3219d57c1edc76167b7
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/freetype/src/docs/GPLv2.TXT %{buildroot}/usr/share/package-licenses/qt6base/dac7127c82749e3107b53530289e1cd548860868
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/fusejs/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/c98f7fb76b8f5e076613de9f2764c67d8161c6c2
 cp %{_builddir}/qt-everywhere-src-6.2.1/qtwebengine/src/3rdparty/chromium/third_party/gemmlowp/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/2b8b815229aa8a61e483fb4ba0588b8b6c491890
@@ -14203,6 +14206,7 @@ for i in %{buildroot}/usr/bin/* ; do mv $i $i-qt6 ; done
 /usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c
 /usr/share/package-licenses/qt6base/4d50453741267c3b931c605e9316dabbfa641117
 /usr/share/package-licenses/qt6base/4dbe7c1f3a1833a88333a7c282119323e9ef44fa
+/usr/share/package-licenses/qt6base/4ddaa192f25581d05cb4d3219d57c1edc76167b7
 /usr/share/package-licenses/qt6base/4e09d0a0fc29cb0067021064555f1025f97aef39
 /usr/share/package-licenses/qt6base/4e2a19e8aadb8ac95045def0f701210053ddde5e
 /usr/share/package-licenses/qt6base/4f093a0f3fc62084eea6f01a873119eb06d7f96a

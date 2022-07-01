@@ -19,3 +19,4 @@ libevent-dev
 nodejs-dev
 pacrunner-dev
 icu4c-dev
+llvm-staticdev
