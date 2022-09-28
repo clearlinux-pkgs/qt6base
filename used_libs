@@ -22,6 +22,13 @@ libgdk-3.so.0
 libglib-2.0.so.0
 libgobject-2.0.so.0
 libgssapi_krb5.so.2
+libgstallocators-1.0.so.0
+libgstapp-1.0.so.0
+libgstbase-1.0.so.0
+libgstgl-1.0.so.0
+libgstpbutils-1.0.so.0
+libgstreamer-1.0.so.0
+libgstvideo-1.0.so.0
 libgtk-3.so.0
 libharfbuzz.so.0
 libhunspell-1.7.so.0
@@ -38,7 +45,6 @@ libpcre2-16.so.0
 libpng16.so.16
 libpq.so.5
 libproxy.so.1
-libpulse.so.0
 libsqlite3.so.0
 libssl.so.3
 libstdc++.so.6

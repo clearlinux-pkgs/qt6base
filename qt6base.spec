@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 58
+Release  : 59
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
@@ -56,6 +56,7 @@ BuildRequires : git
 BuildRequires : glibc-dev
 BuildRequires : gnutls-dev
 BuildRequires : googletest-dev
+BuildRequires : gst-plugins-base-dev
 BuildRequires : gstreamer-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
@@ -70,6 +71,7 @@ BuildRequires : libpng-dev
 BuildRequires : libxml2-dev
 BuildRequires : libxslt-bin
 BuildRequires : libxslt-dev
+BuildRequires : lksctp-tools-dev
 BuildRequires : llvm-dev
 BuildRequires : llvm-staticdev
 BuildRequires : mariadb-dev
@@ -224,6 +226,7 @@ BuildRequires : tiff-dev
 BuildRequires : utf8cpp-dev
 BuildRequires : wayland
 BuildRequires : wayland-dev
+BuildRequires : xmlstarlet
 BuildRequires : xz-dev
 BuildRequires : zlib-dev
 Patch1: configure.patch
@@ -312,7 +315,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664391971
+export SOURCE_DATE_EPOCH=1664399367
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -336,7 +339,8 @@ export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-in
 -DFEATURE_system_sqlite=ON -DFEATURE_system_xcb_xinput=ON \
 -DFEATURE_system_zlib=ON \
 -DQT_BUILD_TESTS=OFF \
--DINSTALL_ARCHDATADIR=lib64/qt6-DINSTALL_DATADIR=share/qt6 -DINSTALL_LIBDIR=lib64 -DINSTALL_LIBEXECDIR=libexec -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs -DINSTALL_SYSCONFDIR=/etc/xdg
+-DINSTALL_ARCHDATADIR=lib64/qt6-DINSTALL_DATADIR=share/qt6 -DINSTALL_LIBDIR=lib64 -DINSTALL_LIBEXECDIR=libexec -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs -DINSTALL_SYSCONFDIR=/etc/xdg \
+-DFEATURE_mimetype_database=OFF
 ## make_prepend content
 #(cd src && ../bin/qmake -config ltcg -config fat-static-lto)
 ## make_prepend end
@@ -351,7 +355,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1664391971
+export SOURCE_DATE_EPOCH=1664399367
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
