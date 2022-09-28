@@ -19,3 +19,7 @@ libevent-dev
 nodejs-dev
 pacrunner-dev
 icu4c-dev
+llvm-staticdev
+libxml2-dev
+icu4c-dev
+gstreamer-dev

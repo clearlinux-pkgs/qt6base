@@ -1,0 +1,11 @@
+--- qt-everywhere-src-6.2.1/qtbase/cmake/QtProcessConfigureArgs.cmake~	2021-10-20 11:54:23.000000000 +0000
++++ qt-everywhere-src-6.2.1/qtbase/cmake/QtProcessConfigureArgs.cmake	2022-06-10 17:37:53.158994843 +0000
+@@ -642,7 +642,7 @@
+     endif()
+ 
+     if("${type}" STREQUAL "")
+-        qtConfAddError("Unknown command line option '${arg}'.")
++	continue()
+     endif()
+ 
+     if(NOT COMMAND "qt_commandline_${type}")
