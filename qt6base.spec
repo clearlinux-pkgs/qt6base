@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 60
+Release  : 61
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
@@ -315,7 +315,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1665085867
+export SOURCE_DATE_EPOCH=1665092815
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -355,7 +355,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1665085867
+export SOURCE_DATE_EPOCH=1665092815
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -1868,6 +1868,35 @@ pushd clr-build
 popd
 ## Remove excluded files
 rm -f %{buildroot}*/usr/bin/haswell/qmake
+rm -f %{buildroot}*/usr/bin/assistant
+rm -f %{buildroot}*/usr/bin/designer
+rm -f %{buildroot}*/usr/bin/lconvert
+rm -f %{buildroot}*/usr/bin/linguist
+rm -f %{buildroot}*/usr/bin/lrelease
+rm -f %{buildroot}*/usr/bin/lupdate
+rm -f %{buildroot}*/usr/bin/pixeltool
+rm -f %{buildroot}*/usr/bin/qdbus
+rm -f %{buildroot}*/usr/bin/qdbusviewer
+rm -f %{buildroot}*/usr/bin/qdistancefieldgenerator
+rm -f %{buildroot}*/usr/bin/qhelpgenerator
+rm -f %{buildroot}*/usr/bin/qtdiag
+rm -f %{buildroot}*/usr/bin/qtpaths
+rm -f %{buildroot}*/usr/bin/qtplugininfo
+rm -f %{buildroot}*/usr/bin/canbusutil
+rm -f %{buildroot}*/usr/bin/qml
+rm -f %{buildroot}*/usr/bin/qmleasing
+rm -f %{buildroot}*/usr/bin/qmlformat
+rm -f %{buildroot}*/usr/bin/qmllint
+rm -f %{buildroot}*/usr/bin/qmlplugindump
+rm -f %{buildroot}*/usr/bin/qmlpreview
+rm -f %{buildroot}*/usr/bin/qmlprofiler
+rm -f %{buildroot}*/usr/bin/qmlscene
+rm -f %{buildroot}*/usr/bin/qmltestrunner
+rm -f %{buildroot}*/usr/bin/qmltime
+rm -f %{buildroot}*/usr/bin/qscxmlc
+rm -f %{buildroot}*/usr/bin/qdbuscpp2xml
+rm -f %{buildroot}*/usr/bin/qdbusxml2cpp
+rm -f %{buildroot}*/usr/bin/qmake
 ## install_append content
 rm -f %{buildroot}/usr/bin/haswell/*.pl
 
@@ -4214,54 +4243,25 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 %defattr(-,root,root,-)
 /usr/bin/androiddeployqt
 /usr/bin/androidtestrunner
-/usr/bin/assistant
 /usr/bin/balsam
 /usr/bin/balsamui
-/usr/bin/canbusutil
-/usr/bin/designer
 /usr/bin/instancer
-/usr/bin/lconvert
-/usr/bin/linguist
-/usr/bin/lrelease
-/usr/bin/lupdate
 /usr/bin/meshdebug
-/usr/bin/pixeltool
-/usr/bin/qdbus
-/usr/bin/qdbusviewer
-/usr/bin/qdistancefieldgenerator
 /usr/bin/qdoc
-/usr/bin/qhelpgenerator
 /usr/bin/qmake6
-/usr/bin/qml
 /usr/bin/qmldom
-/usr/bin/qmleasing
-/usr/bin/qmlformat
-/usr/bin/qmllint
-/usr/bin/qmlplugindump
-/usr/bin/qmlpreview
-/usr/bin/qmlprofiler
-/usr/bin/qmlscene
-/usr/bin/qmltestrunner
-/usr/bin/qmltime
 /usr/bin/qsb
-/usr/bin/qscxmlc
 /usr/bin/qt-cmake
 /usr/bin/qt-cmake-private
 /usr/bin/qt-cmake-private-install.cmake
 /usr/bin/qt-cmake-standalone-test
 /usr/bin/qt-configure-module
-/usr/bin/qtdiag
 /usr/bin/qtdiag6
-/usr/bin/qtpaths
 /usr/bin/qtpaths6
-/usr/bin/qtplugininfo
 /usr/bin/shadergen
 
 %files dev
 %defattr(-,root,root,-)
-/usr/bin/qdbuscpp2xml
-/usr/bin/qdbusxml2cpp
-/usr/bin/qmake
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/abstractevaluateclipanimatorjob_p.h
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/additiveclipblend_p.h
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/animationclip_p.h
