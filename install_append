@@ -1,3 +1,2 @@
 rm -f %{buildroot}/usr/bin/haswell/*.pl
-for i in %{buildroot}/usr/bin/* ; do mv $i $i-qt6 ; done
 

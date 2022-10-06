@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.2.1
-Release  : 59
+Release  : 60
 URL      : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.2/6.2.1/single/qt-everywhere-src-6.2.1.tar.xz
 Summary  : Ninja is a small build system with a focus on speed.
@@ -315,7 +315,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664399367
+export SOURCE_DATE_EPOCH=1665085867
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -355,7 +355,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1664399367
+export SOURCE_DATE_EPOCH=1665085867
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -1870,7 +1870,6 @@ popd
 rm -f %{buildroot}*/usr/bin/haswell/qmake
 ## install_append content
 rm -f %{buildroot}/usr/bin/haswell/*.pl
-for i in %{buildroot}/usr/bin/* ; do mv $i $i-qt6 ; done
 
 ## install_append end
 
@@ -4213,56 +4212,56 @@ for i in %{buildroot}/usr/bin/* ; do mv $i $i-qt6 ; done
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/androiddeployqt-qt6
-/usr/bin/androidtestrunner-qt6
-/usr/bin/assistant-qt6
-/usr/bin/balsam-qt6
-/usr/bin/balsamui-qt6
-/usr/bin/canbusutil-qt6
-/usr/bin/designer-qt6
-/usr/bin/instancer-qt6
-/usr/bin/lconvert-qt6
-/usr/bin/linguist-qt6
-/usr/bin/lrelease-qt6
-/usr/bin/lupdate-qt6
-/usr/bin/meshdebug-qt6
-/usr/bin/pixeltool-qt6
-/usr/bin/qdbus-qt6
-/usr/bin/qdbuscpp2xml-qt6
-/usr/bin/qdbusviewer-qt6
-/usr/bin/qdbusxml2cpp-qt6
-/usr/bin/qdistancefieldgenerator-qt6
-/usr/bin/qdoc-qt6
-/usr/bin/qhelpgenerator-qt6
-/usr/bin/qmake-qt6
-/usr/bin/qmake6-qt6
-/usr/bin/qml-qt6
-/usr/bin/qmldom-qt6
-/usr/bin/qmleasing-qt6
-/usr/bin/qmlformat-qt6
-/usr/bin/qmllint-qt6
-/usr/bin/qmlplugindump-qt6
-/usr/bin/qmlpreview-qt6
-/usr/bin/qmlprofiler-qt6
-/usr/bin/qmlscene-qt6
-/usr/bin/qmltestrunner-qt6
-/usr/bin/qmltime-qt6
-/usr/bin/qsb-qt6
-/usr/bin/qscxmlc-qt6
-/usr/bin/qt-cmake-private-install.cmake-qt6
-/usr/bin/qt-cmake-private-qt6
-/usr/bin/qt-cmake-qt6
-/usr/bin/qt-cmake-standalone-test-qt6
-/usr/bin/qt-configure-module-qt6
-/usr/bin/qtdiag-qt6
-/usr/bin/qtdiag6-qt6
-/usr/bin/qtpaths-qt6
-/usr/bin/qtpaths6-qt6
-/usr/bin/qtplugininfo-qt6
-/usr/bin/shadergen-qt6
+/usr/bin/androiddeployqt
+/usr/bin/androidtestrunner
+/usr/bin/assistant
+/usr/bin/balsam
+/usr/bin/balsamui
+/usr/bin/canbusutil
+/usr/bin/designer
+/usr/bin/instancer
+/usr/bin/lconvert
+/usr/bin/linguist
+/usr/bin/lrelease
+/usr/bin/lupdate
+/usr/bin/meshdebug
+/usr/bin/pixeltool
+/usr/bin/qdbus
+/usr/bin/qdbusviewer
+/usr/bin/qdistancefieldgenerator
+/usr/bin/qdoc
+/usr/bin/qhelpgenerator
+/usr/bin/qmake6
+/usr/bin/qml
+/usr/bin/qmldom
+/usr/bin/qmleasing
+/usr/bin/qmlformat
+/usr/bin/qmllint
+/usr/bin/qmlplugindump
+/usr/bin/qmlpreview
+/usr/bin/qmlprofiler
+/usr/bin/qmlscene
+/usr/bin/qmltestrunner
+/usr/bin/qmltime
+/usr/bin/qsb
+/usr/bin/qscxmlc
+/usr/bin/qt-cmake
+/usr/bin/qt-cmake-private
+/usr/bin/qt-cmake-private-install.cmake
+/usr/bin/qt-cmake-standalone-test
+/usr/bin/qt-configure-module
+/usr/bin/qtdiag
+/usr/bin/qtdiag6
+/usr/bin/qtpaths
+/usr/bin/qtpaths6
+/usr/bin/qtplugininfo
+/usr/bin/shadergen
 
 %files dev
 %defattr(-,root,root,-)
+/usr/bin/qdbuscpp2xml
+/usr/bin/qdbusxml2cpp
+/usr/bin/qmake
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/abstractevaluateclipanimatorjob_p.h
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/additiveclipblend_p.h
 /usr/include/Qt3DAnimation/6.2.1/Qt3DAnimation/private/animationclip_p.h
