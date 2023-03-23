@@ -339,7 +339,7 @@ export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-in
 -DFEATURE_system_sqlite=ON -DFEATURE_system_xcb_xinput=ON \
 -DFEATURE_system_zlib=ON \
 -DQT_BUILD_TESTS=OFF \
--DINSTALL_ARCHDATADIR=lib64/qt6-DINSTALL_DATADIR=share/qt6 -DINSTALL_LIBDIR=lib64 -DINSTALL_LIBEXECDIR=libexec -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs -DINSTALL_SYSCONFDIR=/etc/xdg \
+-DINSTALL_ARCHDATADIR=lib64/qt6 -DINSTALL_DATADIR=share/qt6 -DINSTALL_LIBDIR=lib64 -DINSTALL_LIBEXECDIR=libexec -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs -DINSTALL_SYSCONFDIR=/etc/xdg \
 -DFEATURE_mimetype_database=OFF
 ## make_prepend content
 #(cd src && ../bin/qmake -config ltcg -config fat-static-lto)
