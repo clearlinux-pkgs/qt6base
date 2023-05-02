@@ -1,1 +1,2 @@
 #(cd src && ../bin/qmake -config ltcg -config fat-static-lto)
+cmake --build . --parallel

@@ -16,3 +16,4 @@ pypi(tensorflow)
 pypi(tensorflow_hub)
 pacrunner-dev
 qt6base-dev
+glslang-data

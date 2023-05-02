@@ -26,3 +26,5 @@ gstreamer-dev
 lksctp-tools-dev
 xmlstarlet
 gst-plugins-base-dev
+gperf
+ninja

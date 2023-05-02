@@ -19,3 +19,9 @@ libvmaf_rc
 libyuv
 minizip
 sensord-qt5
+GLOBAL
+libLCMS2
+libhwy
+libjxl
+libjxl_threads
+speech-dispatcher
