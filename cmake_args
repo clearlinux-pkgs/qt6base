@@ -1,20 +1,24 @@
--DQT_FEATURE_rpath=OFF
--DQT_FEATURE_separate_debug_info=OFF
--DQT_FEATURE_journald=ON
+-G Ninja
 -DBUILD_SHARED_LIBS=ON
-
--DBUILD_WITH_PCH=OFF -DFEATURE_dbus_linked=ON -DFEATURE_journald=ON
--DFEATURE_libproxy=ON -DFEATURE_no_direct_extern_access=ON
--DFEATURE_optimize_debug=OFF -DFEATURE_openssl_linked=ON
--DFEATURE_reduce_relocations=ON -DFEATURE_system_sqlite=ON
--DFEATURE_system_xcb_xinput=ON
-
--DFEATURE_cups=ON -DFEATURE_fontconfig=ON -DFEATURE_glib=ON
--DFEATURE_system_doubleconversion=ON -DFEATURE_system_freetype=ON
--DFEATURE_system_harfbuzz=ON -DFEATURE_system_jpeg=ON
--DFEATURE_system_pcre2=ON
--DFEATURE_system_sqlite=ON -DFEATURE_system_xcb_xinput=ON
--DFEATURE_system_zlib=ON
--DQT_BUILD_TESTS=OFF
--DINSTALL_ARCHDATADIR=lib64/qt6 -DINSTALL_DATADIR=share/qt6 -DINSTALL_LIBDIR=lib64 -DINSTALL_LIBEXECDIR=libexec -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs -DINSTALL_SYSCONFDIR=/etc/xdg
+-DCMAKE_INSTALL_PREFIX=/usr
+-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON
+-DFEATURE_journald=ON
+-DFEATURE_libproxy=ON
 -DFEATURE_mimetype_database=OFF
+-DFEATURE_no_direct_extern_access=ON
+-DFEATURE_openssl_linked=ON
+-DFEATURE_optimize_debug=OFF
+-DFEATURE_reduce_relocations=ON
+-DFEATURE_system_freetype=ON
+-DFEATURE_system_harfbuzz=ON
+-DFEATURE_system_jpeg=ON
+-DFEATURE_system_pcre2=ON
+-DFEATURE_system_sqlite=ON
+-DFEATURE_system_xcb_xinput=ON
+-DFEATURE_system_zlib=ON
+-DINSTALL_ARCHDATADIR=lib64/qt6
+-DINSTALL_DATADIR=share/qt6
+-DINSTALL_LIBDIR=lib64
+-DINSTALL_LIBEXECDIR=libexec
+-DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs
+-DINSTALL_SYSCONFDIR=/etc/xdg

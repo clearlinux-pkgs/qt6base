@@ -19,5 +19,6 @@ xcb-keysyms
 xi
 xkbcommon
 xkbcommon-x11
+xkbfile
 xcb-renderutil
 gstreamer-base-1.0

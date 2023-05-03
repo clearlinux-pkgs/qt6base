@@ -28,3 +28,4 @@ xmlstarlet
 gst-plugins-base-dev
 gperf
 ninja
+gcc-staticdev
