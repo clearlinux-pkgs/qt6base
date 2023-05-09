@@ -6,7 +6,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.5.0
-Release  : 65
+Release  : 66
 URL      : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Summary  : @pkgconfig_description@
@@ -189,7 +189,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683137409
+export SOURCE_DATE_EPOCH=1683659120
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -226,9 +226,49 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section
 -DINSTALL_SYSCONFDIR=/etc/xdg
 cmake --build .  %{?_smp_mflags}
 popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -Wl,-z,x86-64-v3 -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+%cmake .. -G Ninja \
+-DBUILD_SHARED_LIBS=ON \
+-DCMAKE_INSTALL_PREFIX=/usr \
+-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
+-DFEATURE_journald=ON \
+-DFEATURE_libproxy=ON \
+-DFEATURE_mimetype_database=OFF \
+-DFEATURE_no_direct_extern_access=ON \
+-DFEATURE_openssl_linked=ON \
+-DFEATURE_optimize_debug=OFF \
+-DFEATURE_reduce_relocations=ON \
+-DFEATURE_system_freetype=ON \
+-DFEATURE_system_harfbuzz=ON \
+-DFEATURE_system_jpeg=ON \
+-DFEATURE_system_pcre2=ON \
+-DFEATURE_system_sqlite=ON \
+-DFEATURE_system_xcb_xinput=ON \
+-DFEATURE_system_zlib=ON \
+-DINSTALL_ARCHDATADIR=lib64/qt6 \
+-DINSTALL_DATADIR=share/qt6 \
+-DINSTALL_LIBDIR=lib64 \
+-DINSTALL_LIBEXECDIR=libexec \
+-DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs \
+-DINSTALL_SYSCONFDIR=/etc/xdg
+cmake --build .  %{?_smp_mflags}
+popd
 
 %install
-export SOURCE_DATE_EPOCH=1683137409
+export SOURCE_DATE_EPOCH=1683659120
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -299,6 +339,9 @@ cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/VALGRIND_L
 cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/auto/corelib/serialization/qxmlstream/XML-Test-Suite-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/d134e46110f1cb9253ba4542a2d8770179429da4 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/auto/testlib/selftests/CATCH_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/3cba29011be2b9d59f6204d6fa0a386b1b2dbd90 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/util/gradientgen/WEBGRADIENTS_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/69e3487e6a838e7c9357d55578f64d5995f7e711 || :
+pushd clr-build-avx2
+DESTDIR=%{buildroot} cmake --install ._v3  || :
+popd
 pushd clr-build
 DESTDIR=%{buildroot} cmake --install .
 popd
@@ -337,6 +380,7 @@ rm -f %{buildroot}*/usr/bin/qmake
 rm -f %{buildroot}/usr/bin/haswell/*.pl
 
 ## install_append end
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
