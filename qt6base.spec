@@ -6,7 +6,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.5.0
-Release  : 67
+Release  : 68
 URL      : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Summary  : @pkgconfig_description@
@@ -176,7 +176,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683735247
+export SOURCE_DATE_EPOCH=1683737145
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -257,7 +257,7 @@ cmake --build .  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1683735247
+export SOURCE_DATE_EPOCH=1683737145
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
