@@ -6,13 +6,12 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.5.0
-Release  : 66
+Release  : 67
 URL      : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz
 Summary  : @pkgconfig_description@
 Group    : Development/Tools
 License  : Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-3-Clause BSL-1.0 Bitstream-Vera CC0-1.0 GFDL-1.3 GPL-2.0 GPL-3.0 IJG ISC LGPL-3.0 MIT MIT-feh MPL-2.0-no-copyleft-exception OFL-1.0 W3C-19980720 Zlib bzip2-1.0.6
-Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-data = %{version}-%{release}
 Requires: qt6base-lib = %{version}-%{release}
 Requires: qt6base-libexec = %{version}-%{release}
@@ -111,17 +110,6 @@ BuildRequires : zlib-dev
 %description
 program used to generate qkeymapper_x11_p.cpp
 
-%package bin
-Summary: bin components for the qt6base package.
-Group: Binaries
-Requires: qt6base-data = %{version}-%{release}
-Requires: qt6base-libexec = %{version}-%{release}
-Requires: qt6base-license = %{version}-%{release}
-
-%description bin
-bin components for the qt6base package.
-
-
 %package data
 Summary: data components for the qt6base package.
 Group: Data
@@ -134,7 +122,6 @@ data components for the qt6base package.
 Summary: dev components for the qt6base package.
 Group: Development
 Requires: qt6base-lib = %{version}-%{release}
-Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-data = %{version}-%{release}
 Provides: qt6base-devel = %{version}-%{release}
 Requires: qt6base = %{version}-%{release}
@@ -189,7 +176,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683659120
+export SOURCE_DATE_EPOCH=1683735247
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -223,7 +210,8 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section
 -DINSTALL_LIBDIR=lib64 \
 -DINSTALL_LIBEXECDIR=libexec \
 -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs \
--DINSTALL_SYSCONFDIR=/etc/xdg
+-DINSTALL_SYSCONFDIR=/etc/xdg \
+-DINSTALL_BINDIR=/usr/lib64/qt6/bin
 cmake --build .  %{?_smp_mflags}
 popd
 mkdir -p clr-build-avx2
@@ -263,12 +251,13 @@ export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 -DINSTALL_LIBDIR=lib64 \
 -DINSTALL_LIBEXECDIR=libexec \
 -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs \
--DINSTALL_SYSCONFDIR=/etc/xdg
+-DINSTALL_SYSCONFDIR=/etc/xdg \
+-DINSTALL_BINDIR=/usr/lib64/qt6/bin
 cmake --build .  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1683659120
+export SOURCE_DATE_EPOCH=1683735247
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -345,37 +334,6 @@ popd
 pushd clr-build
 DESTDIR=%{buildroot} cmake --install .
 popd
-## Remove excluded files
-rm -f %{buildroot}*/usr/bin/haswell/qmake
-rm -f %{buildroot}*/usr/bin/assistant
-rm -f %{buildroot}*/usr/bin/designer
-rm -f %{buildroot}*/usr/bin/lconvert
-rm -f %{buildroot}*/usr/bin/linguist
-rm -f %{buildroot}*/usr/bin/lrelease
-rm -f %{buildroot}*/usr/bin/lupdate
-rm -f %{buildroot}*/usr/bin/pixeltool
-rm -f %{buildroot}*/usr/bin/qdbus
-rm -f %{buildroot}*/usr/bin/qdbusviewer
-rm -f %{buildroot}*/usr/bin/qdistancefieldgenerator
-rm -f %{buildroot}*/usr/bin/qhelpgenerator
-rm -f %{buildroot}*/usr/bin/qtdiag
-rm -f %{buildroot}*/usr/bin/qtpaths
-rm -f %{buildroot}*/usr/bin/qtplugininfo
-rm -f %{buildroot}*/usr/bin/canbusutil
-rm -f %{buildroot}*/usr/bin/qml
-rm -f %{buildroot}*/usr/bin/qmleasing
-rm -f %{buildroot}*/usr/bin/qmlformat
-rm -f %{buildroot}*/usr/bin/qmllint
-rm -f %{buildroot}*/usr/bin/qmlplugindump
-rm -f %{buildroot}*/usr/bin/qmlpreview
-rm -f %{buildroot}*/usr/bin/qmlprofiler
-rm -f %{buildroot}*/usr/bin/qmlscene
-rm -f %{buildroot}*/usr/bin/qmltestrunner
-rm -f %{buildroot}*/usr/bin/qmltime
-rm -f %{buildroot}*/usr/bin/qscxmlc
-rm -f %{buildroot}*/usr/bin/qdbuscpp2xml
-rm -f %{buildroot}*/usr/bin/qdbusxml2cpp
-rm -f %{buildroot}*/usr/bin/qmake
 ## install_append content
 rm -f %{buildroot}/usr/bin/haswell/*.pl
 
@@ -384,6 +342,17 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 
 %files
 %defattr(-,root,root,-)
+/usr/lib64/qt6/bin/androiddeployqt
+/usr/lib64/qt6/bin/androiddeployqt6
+/usr/lib64/qt6/bin/androidtestrunner
+/usr/lib64/qt6/bin/qdbuscpp2xml
+/usr/lib64/qt6/bin/qdbusxml2cpp
+/usr/lib64/qt6/bin/qmake
+/usr/lib64/qt6/bin/qmake6
+/usr/lib64/qt6/bin/qt-cmake
+/usr/lib64/qt6/bin/qt-configure-module
+/usr/lib64/qt6/bin/qtpaths
+/usr/lib64/qt6/bin/qtpaths6
 /usr/lib64/qt6/metatypes/qt6concurrent_relwithdebinfo_metatypes.json
 /usr/lib64/qt6/metatypes/qt6core_relwithdebinfo_metatypes.json
 /usr/lib64/qt6/metatypes/qt6dbus_relwithdebinfo_metatypes.json
@@ -904,16 +873,6 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/lib64/qt6/modules/Widgets.json
 /usr/lib64/qt6/modules/XcbQpaPrivate.json
 /usr/lib64/qt6/modules/Xml.json
-
-%files bin
-%defattr(-,root,root,-)
-/usr/bin/androiddeployqt
-/usr/bin/androiddeployqt6
-/usr/bin/androidtestrunner
-/usr/bin/qmake6
-/usr/bin/qt-cmake
-/usr/bin/qt-configure-module
-/usr/bin/qtpaths6
 
 %files data
 %defattr(-,root,root,-)
