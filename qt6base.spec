@@ -6,7 +6,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.5.3
-Release  : 70
+Release  : 71
 URL      : https://download.qt.io/official_releases/qt/6.5/6.5.3/submodules/qtbase-everywhere-src-6.5.3.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.5/6.5.3/submodules/qtbase-everywhere-src-6.5.3.tar.xz
 Summary  : @pkgconfig_description@
@@ -124,6 +124,7 @@ Requires: qt6base-lib = %{version}-%{release}
 Requires: qt6base-data = %{version}-%{release}
 Provides: qt6base-devel = %{version}-%{release}
 Requires: qt6base = %{version}-%{release}
+Requires: Vulkan-Headers-dev
 Requires: libxkbcommon-dev
 Requires: libxkbfile-dev
 Requires: llvm-staticdev
@@ -179,7 +180,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1696272666
+export SOURCE_DATE_EPOCH=1696282675
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -286,7 +287,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1696272666
+export SOURCE_DATE_EPOCH=1696282675
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -309,6 +310,8 @@ cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-only.txt %{bui
 cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/f45ee1c765646813b442ca58de72e20a64a7ddba || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/qt6base/9b358a3bb3c510255f375406df8ce40d7e83edfb || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/cmake/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/qt6base/ff3ed70db4739b3c6747c7f624fe2bad70802987 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/cmake/3rdparty/kwin/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/qt6base/ff3ed70db4739b3c6747c7f624fe2bad70802987 || :
@@ -4272,6 +4275,7 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/share/package-licenses/qt6base/5afaf3263848300e6daf9a5cc3761eddb9969946
 /usr/share/package-licenses/qt6base/60f8838aed230fff6697f59ea3a732f18c723c3d
 /usr/share/package-licenses/qt6base/63eafc680e50e29f1eb7d84fb6df5233c24643da
+/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f
 /usr/share/package-licenses/qt6base/69e3487e6a838e7c9357d55578f64d5995f7e711
 /usr/share/package-licenses/qt6base/6a9d0fd268bedfb4efdc581af4c81e6277928456
 /usr/share/package-licenses/qt6base/6c978ae82e85830764c8683ee4df810c4360c547
