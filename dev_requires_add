@@ -3,4 +3,4 @@ llvm-staticdev
 libxkbfile-dev
 libxkbcommon-dev
 Vulkan-Headers-dev
-lib6shadertools-dev
+qt6shadertools-dev
