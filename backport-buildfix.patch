@@ -1,0 +1,10 @@
+--- qtbase-everywhere-src-6.6.0/src/gui/platform/unix/qxkbcommon_p.h~	2023-09-13 16:02:48.000000000 +0000
++++ qtbase-everywhere-src-6.6.0/src/gui/platform/unix/qxkbcommon_p.h	2023-10-12 18:11:02.798852041 +0000
+@@ -22,6 +22,7 @@
+ #include <QtCore/private/qglobal_p.h>
+ 
+ #include <xkbcommon/xkbcommon.h>
++#include <xkbcommon/xkbcommon-keysyms.h>
+ 
+ #include <memory>
+ 

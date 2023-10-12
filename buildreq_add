@@ -29,3 +29,5 @@ gst-plugins-base-dev
 gperf
 ninja
 gcc-staticdev
+mtdev-dev
+gdb
