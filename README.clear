@@ -1,0 +1,7 @@
+version updates need to do this order
+
+qt6base
+qt6shadercompiler
+qt6base
+qt6declarative
+<the rest>
