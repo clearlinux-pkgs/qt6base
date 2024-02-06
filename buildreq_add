@@ -31,3 +31,4 @@ ninja
 gcc-staticdev
 mtdev-dev
 gdb
+at-spi2-core-dev
