@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.6.2
-Release  : 80
+Release  : 81
 URL      : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Summary  : @pkgconfig_description@
@@ -137,6 +137,7 @@ Requires: Vulkan-Headers-dev
 Requires: libxkbcommon-dev
 Requires: libxkbfile-dev
 Requires: llvm-staticdev
+Requires: mesa-dev
 Requires: qt6base
 Requires: qt6shadertools-dev
 
@@ -191,7 +192,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707923546
+export SOURCE_DATE_EPOCH=1707941813
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -300,7 +301,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707923546
+export SOURCE_DATE_EPOCH=1707941813
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -348,6 +349,7 @@ cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/ijg-licens
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/zlib-license.txt %{buildroot}/usr/share/package-licenses/qt6base/6a9d0fd268bedfb4efdc581af4c81e6277928456 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/PSL-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/src/LICENSE.chromium %{buildroot}/usr/share/package-licenses/qt6base/73187e456b0901438d4982e4fcb4391a0e7dadef || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/md4c/LICENSE.md %{buildroot}/usr/share/package-licenses/qt6base/90846c5a4d1373eb1dfa01886ce192b2674db511 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/pcre2/LICENCE-SLJIT %{buildroot}/usr/share/package-licenses/qt6base/e9cb7b4dfa8168c3e4041aa6dc2c48a619f3b76b || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/pixman/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/16da0e0dcdc8ca9463ff2b8cb37072ee522b0924 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/rfc6234/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/f62f428fcb4bca5ae06b01409d5a5923163ce4dc || :
@@ -4331,6 +4333,7 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/share/package-licenses/qt6base/89436956cdc9a5f3b5b6eb810fc197437baeb38b
 /usr/share/package-licenses/qt6base/8d434c9c1704b544a8b0652efbc323380b67f9bc
 /usr/share/package-licenses/qt6base/8fa90a82c684d365e3ee08e257ddfeb11a34daab
+/usr/share/package-licenses/qt6base/90846c5a4d1373eb1dfa01886ce192b2674db511
 /usr/share/package-licenses/qt6base/99fccba07bdc277439b88e03af273819d29764c7
 /usr/share/package-licenses/qt6base/9b358a3bb3c510255f375406df8ce40d7e83edfb
 /usr/share/package-licenses/qt6base/9e132ef44ef2f5e72f4e3681765591005694515e
