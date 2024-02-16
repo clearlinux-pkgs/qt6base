@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.6.2
-Release  : 83
+Release  : 84
 URL      : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Summary  : @pkgconfig_description@
