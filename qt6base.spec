@@ -8,12 +8,13 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.6.2
-Release  : 84
+Release  : 87
 URL      : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtbase-everywhere-src-6.6.2.tar.xz
 Summary  : @pkgconfig_description@
 Group    : Development/Tools
 License  : Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-3-Clause BSL-1.0 Bitstream-Vera CC0-1.0 GFDL-1.3 GPL-2.0 GPL-3.0 IJG ISC LGPL-3.0 MIT MIT-feh MPL-2.0-no-copyleft-exception OFL-1.0 W3C-19980720 Zlib bzip2-1.0.6
+Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-data = %{version}-%{release}
 Requires: qt6base-lib = %{version}-%{release}
 Requires: qt6base-libexec = %{version}-%{release}
@@ -113,10 +114,18 @@ BuildRequires : zlib-dev
 Patch1: backport-buildfix.patch
 
 %description
-Welcome to Qt 5
-===============
-Qt is a cross-platform application and user interface framework. It
-consists of a number of software libraries and development tools.
+program used to generate qkeymapper_x11_p.cpp
+
+%package bin
+Summary: bin components for the qt6base package.
+Group: Binaries
+Requires: qt6base-data = %{version}-%{release}
+Requires: qt6base-libexec = %{version}-%{release}
+Requires: qt6base-license = %{version}-%{release}
+
+%description bin
+bin components for the qt6base package.
+
 
 %package data
 Summary: data components for the qt6base package.
@@ -130,6 +139,7 @@ data components for the qt6base package.
 Summary: dev components for the qt6base package.
 Group: Development
 Requires: qt6base-lib = %{version}-%{release}
+Requires: qt6base-bin = %{version}-%{release}
 Requires: qt6base-data = %{version}-%{release}
 Provides: qt6base-devel = %{version}-%{release}
 Requires: qt6base = %{version}-%{release}
@@ -192,7 +202,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1708113345
+export SOURCE_DATE_EPOCH=1710459949
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -234,7 +244,7 @@ export GOAMD64=v2
 -DINSTALL_LIBEXECDIR=libexec \
 -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs \
 -DINSTALL_SYSCONFDIR=/etc/xdg \
--DINSTALL_BINDIR=/usr/lib64/qt6/bin
+-DINSTALL_BINDIR=/usr/bin
 cmake --build .  %{?_smp_mflags}
 popd
 mkdir -p clr-build-avx2
@@ -282,7 +292,7 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 -DINSTALL_LIBEXECDIR=libexec \
 -DINSTALL_MKSPECSDIR=lib64/qt6/mkspecs \
 -DINSTALL_SYSCONFDIR=/etc/xdg \
--DINSTALL_BINDIR=/usr/lib64/qt6/bin
+-DINSTALL_BINDIR=/usr/bin
 cmake --build .  %{?_smp_mflags}
 popd
 
@@ -301,7 +311,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1708113345
+export SOURCE_DATE_EPOCH=1710459949
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -387,6 +397,11 @@ GOAMD64=v2
 pushd clr-build
 DESTDIR=%{buildroot} cmake --install .
 popd
+## Remove excluded files
+rm -f %{buildroot}*/usr/bin/qdbuscpp2xml
+rm -f %{buildroot}*/usr/bin/qdbusxml2cpp
+rm -f %{buildroot}*/usr/bin/qmake
+rm -f %{buildroot}*/usr/bin/qtpaths
 ## install_append content
 rm -f %{buildroot}/usr/bin/haswell/*.pl
 
@@ -396,18 +411,6 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 %files
 %defattr(-,root,root,-)
 /usr/lib64/objects-RelWithDebInfo/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons.cpp.o
-/usr/lib64/qt6/bin/androiddeployqt
-/usr/lib64/qt6/bin/androiddeployqt6
-/usr/lib64/qt6/bin/androidtestrunner
-/usr/lib64/qt6/bin/qdbuscpp2xml
-/usr/lib64/qt6/bin/qdbusxml2cpp
-/usr/lib64/qt6/bin/qmake
-/usr/lib64/qt6/bin/qmake6
-/usr/lib64/qt6/bin/qt-cmake
-/usr/lib64/qt6/bin/qt-cmake-create
-/usr/lib64/qt6/bin/qt-configure-module
-/usr/lib64/qt6/bin/qtpaths
-/usr/lib64/qt6/bin/qtpaths6
 /usr/lib64/qt6/metatypes/qt6concurrent_relwithdebinfo_metatypes.json
 /usr/lib64/qt6/metatypes/qt6core_relwithdebinfo_metatypes.json
 /usr/lib64/qt6/metatypes/qt6dbus_relwithdebinfo_metatypes.json
@@ -922,6 +925,17 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/lib64/qt6/modules/Widgets.json
 /usr/lib64/qt6/modules/XcbQpaPrivate.json
 /usr/lib64/qt6/modules/Xml.json
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/androiddeployqt
+/usr/bin/androiddeployqt6
+/usr/bin/androidtestrunner
+/usr/bin/qmake6
+/usr/bin/qt-cmake
+/usr/bin/qt-cmake-create
+/usr/bin/qt-configure-module
+/usr/bin/qtpaths6
 
 %files data
 %defattr(-,root,root,-)
