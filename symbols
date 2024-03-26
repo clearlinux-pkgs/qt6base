@@ -1,5 +1,5 @@
 libQt6Concurrent.so.6:Qt_6
-libQt6Concurrent.so.6:Qt_6.6_PRIVATE_API
+libQt6Concurrent.so.6:Qt_6_PRIVATE_API
 libQt6Concurrent.so.6:_ZN12QtConcurrent16BlockSizeManager13timeAfterUserEv
 libQt6Concurrent.so.6:_ZN12QtConcurrent16BlockSizeManager14timeBeforeUserEv
 libQt6Concurrent.so.6:_ZN12QtConcurrent16BlockSizeManager9blockSizeEv
@@ -33,7 +33,7 @@ libQt6Core.so.6:Qt_6.3
 libQt6Core.so.6:Qt_6.4
 libQt6Core.so.6:Qt_6.5
 libQt6Core.so.6:Qt_6.6
-libQt6Core.so.6:Qt_6.6_PRIVATE_API
+libQt6Core.so.6:Qt_6_PRIVATE_API
 libQt6Core.so.6:_Z10qLocalTimelP2tm
 libQt6Core.so.6:_Z10qRandomCpuPvx
 libQt6Core.so.6:_Z10qTerminatev
@@ -1285,7 +1285,7 @@ libQt6Core.so.6:_ZN16QLoggingCategoryC1EPKc9QtMsgType
 libQt6Core.so.6:_ZN16QLoggingCategoryC2EPKc9QtMsgType
 libQt6Core.so.6:_ZN16QLoggingCategoryD1Ev
 libQt6Core.so.6:_ZN16QLoggingCategoryD2Ev
-libQt6Core.so.6:_ZN16QLoggingRegistry38registerEnvironmentOverrideForCategoryE14QByteArrayViewS0_
+libQt6Core.so.6:_ZN16QLoggingRegistry38registerEnvironmentOverrideForCategoryEPKcS1_
 libQt6Core.so.6:_ZN16QMetaEnumBuilder11setEnumNameERK10QByteArray
 libQt6Core.so.6:_ZN16QMetaEnumBuilder11setIsScopedEb
 libQt6Core.so.6:_ZN16QMetaEnumBuilder11setMetaTypeE9QMetaType
@@ -1988,6 +1988,7 @@ libQt6Core.so.6:_ZN19QItemSelectionModelD1Ev
 libQt6Core.so.6:_ZN19QItemSelectionModelD2Ev
 libQt6Core.so.6:_ZN19QLibraryInfoPrivate12locationInfoEN12QLibraryInfo11LibraryPathE
 libQt6Core.so.6:_ZN19QLibraryInfoPrivate13configurationEv
+libQt6Core.so.6:_ZN19QLibraryInfoPrivate19setQtconfManualPathEPK7QString
 libQt6Core.so.6:_ZN19QLibraryInfoPrivate4pathEN12QLibraryInfo11LibraryPathENS_9UsageModeE
 libQt6Core.so.6:_ZN19QLibraryInfoPrivate6reloadEv
 libQt6Core.so.6:_ZN19QLocationPermission11setAccuracyENS_8AccuracyE
@@ -6232,7 +6233,7 @@ libQt6Core.so.6:qDetectCpuFeatures
 libQt6Core.so.6:qVersion
 libQt6Core.so.6:qt_startup_hook
 libQt6DBus.so.6:Qt_6
-libQt6DBus.so.6:Qt_6.6_PRIVATE_API
+libQt6DBus.so.6:Qt_6_PRIVATE_API
 libQt6DBus.so.6:_Z14qDBusReplyFillRK12QDBusMessageR10QDBusErrorR8QVariant
 libQt6DBus.so.6:_Z15qDBusAddSpyHookPFvRK12QDBusMessageE
 libQt6DBus.so.6:_Z18qDBusCheckAsyncTagPKc
@@ -6639,7 +6640,7 @@ libQt6DBus.so.6:_ZrsRK13QDBusArgumentR7QPointF
 libQt6DBus.so.6:_ZrsRK13QDBusArgumentR8QVariant
 libQt6DBus.so.6:_ZrsRK13QDBusArgumentR9QDateTime
 libQt6EglFSDeviceIntegration.so.6:Qt_6
-libQt6EglFSDeviceIntegration.so.6:Qt_6.6_PRIVATE_API
+libQt6EglFSDeviceIntegration.so.6:Qt_6_PRIVATE_API
 libQt6EglFSDeviceIntegration.so.6:_Z25qt_egl_device_integrationv
 libQt6EglFSDeviceIntegration.so.6:_ZN12QEglFSCursor11qt_metacallEN11QMetaObject4CallEiPPv
 libQt6EglFSDeviceIntegration.so.6:_ZN12QEglFSCursor11qt_metacastEPKc
@@ -6804,7 +6805,7 @@ libQt6EglFSDeviceIntegration.so.6:_ZThn8_N17QEglFSIntegration28nativeResourceFor
 libQt6EglFSDeviceIntegration.so.6:_ZThn8_N17QEglFSIntegration32nativeResourceFunctionForContextERK10QByteArray
 libQt6EglFSDeviceIntegration.so.6:_ZThn8_NK17QEglFSIntegration16platformFunctionERK10QByteArray
 libQt6EglFsKmsGbmSupport.so.6:Qt_6
-libQt6EglFsKmsGbmSupport.so.6:Qt_6.6_PRIVATE_API
+libQt6EglFsKmsGbmSupport.so.6:Qt_6_PRIVATE_API
 libQt6EglFsKmsGbmSupport.so.6:_ZN18QEglFSKmsGbmDevice12createScreenERK10QKmsOutput
 libQt6EglFsKmsGbmSupport.so.6:_ZN18QEglFSKmsGbmDevice14registerScreenEP15QPlatformScreenbRK6QPointRK5QListIS1_E
 libQt6EglFsKmsGbmSupport.so.6:_ZN18QEglFSKmsGbmDevice18createGlobalCursorEP18QEglFSKmsGbmScreen
@@ -6850,7 +6851,7 @@ libQt6EglFsKmsGbmSupport.so.6:_ZNK18QEglFSKmsGbmScreen6cursorEv
 libQt6EglFsKmsGbmSupport.so.6:_ZNK23QEglFSKmsGbmIntegration12createCursorEP15QPlatformScreen
 libQt6EglFsKmsGbmSupport.so.6:_ZNK23QEglFSKmsGbmIntegration12createWindowEP7QWindow
 libQt6EglFsKmsSupport.so.6:Qt_6
-libQt6EglFsKmsSupport.so.6:Qt_6.6_PRIVATE_API
+libQt6EglFsKmsSupport.so.6:Qt_6_PRIVATE_API
 libQt6EglFsKmsSupport.so.6:_Z16qLcEglfsKmsDebugv
 libQt6EglFsKmsSupport.so.6:_ZN15QEglFSKmsDevice14registerScreenEP15QPlatformScreenbRK6QPointRK5QListIS1_E
 libQt6EglFsKmsSupport.so.6:_ZN15QEglFSKmsDeviceC1EP16QKmsScreenConfigRK7QString
@@ -6908,7 +6909,7 @@ libQt6EglFsKmsSupport.so.6:_ZNK20QEglFSKmsIntegration16supportsPBuffersEv
 libQt6EglFsKmsSupport.so.6:_ZNK20QEglFSKmsIntegration16surfaceFormatForERK14QSurfaceFormat
 libQt6EglFsKmsSupport.so.6:_ZNK20QEglFSKmsIntegration6deviceEv
 libQt6Gui.so.6:Qt_6
-libQt6Gui.so.6:Qt_6.6_PRIVATE_API
+libQt6Gui.so.6:Qt_6_PRIVATE_API
 libQt6Gui.so.6:_Z10lcQpaFontsv
 libQt6Gui.so.6:_Z11qDrawBorderP8QPainterRK5QRectPKN4QCss11BorderStyleEPKiPK6QBrushPK5QSize
 libQt6Gui.so.6:_Z12qTriangulatePKdijRK10QTransformb
@@ -11204,6 +11205,7 @@ libQt6Gui.so.6:_ZN31QOpenGLMultiGroupSharedResourceC1Ev
 libQt6Gui.so.6:_ZN31QOpenGLMultiGroupSharedResourceC2Ev
 libQt6Gui.so.6:_ZN31QOpenGLMultiGroupSharedResourceD1Ev
 libQt6Gui.so.6:_ZN31QOpenGLMultiGroupSharedResourceD2Ev
+libQt6Gui.so.6:_ZN32QAbstractFileIconProviderPrivate11getFileTypeERK9QFileInfo
 libQt6Gui.so.6:_ZN32QAbstractFileIconProviderPrivate18clearIconTypeCacheEv
 libQt6Gui.so.6:_ZN32QAbstractFileIconProviderPrivateC1EP25QAbstractFileIconProvider
 libQt6Gui.so.6:_ZN32QAbstractFileIconProviderPrivateC2EP25QAbstractFileIconProvider
@@ -14732,7 +14734,7 @@ libQt6Gui.so.6:_ZrsR11QDataStreamR9QVector3D
 libQt6Gui.so.6:_ZrsR11QDataStreamR9QVector4D
 libQt6Gui.so.6:_ZrsR11QDataStreamRN10QTransform6AffineE
 libQt6Network.so.6:Qt_6
-libQt6Network.so.6:Qt_6.6_PRIVATE_API
+libQt6Network.so.6:Qt_6_PRIVATE_API
 libQt6Network.so.6:_Z15qIsEffectiveTLD11QStringView
 libQt6Network.so.6:_Z19qt_qhostinfo_lookupRK7QStringP7QObjectPKcPbPi
 libQt6Network.so.6:_Z24qt_ForceTlsSecurityLevelv
@@ -16379,7 +16381,7 @@ libQt6Network.so.6:_ZlsR11QDataStreamRK21QNetworkCacheMetaData
 libQt6Network.so.6:_ZrsR11QDataStreamR12QHostAddress
 libQt6Network.so.6:_ZrsR11QDataStreamR21QNetworkCacheMetaData
 libQt6OpenGL.so.6:Qt_6
-libQt6OpenGL.so.6:Qt_6.6_PRIVATE_API
+libQt6OpenGL.so.6:Qt_6_PRIVATE_API
 libQt6OpenGL.so.6:_Z22qt_gl_read_framebufferRK5QSizebb
 libQt6OpenGL.so.6:_Z47qRegisterNormalizedMetaType_QOpenGLDebugMessageRK10QByteArray
 libQt6OpenGL.so.6:_ZN13QOpenGLBuffer15setUsagePatternENS_12UsagePatternE
@@ -17329,7 +17331,7 @@ libQt6OpenGL.so.6:_Zls6QDebugPK14QOpenGLTexture
 libQt6OpenGL.so.6:_Zls6QDebugRK19QOpenGLDebugMessage
 libQt6OpenGL.so.6:_Zls6QDebugRK21QOpenGLVersionProfile
 libQt6OpenGLWidgets.so.6:Qt_6
-libQt6OpenGLWidgets.so.6:Qt_6.6_PRIVATE_API
+libQt6OpenGLWidgets.so.6:Qt_6_PRIVATE_API
 libQt6OpenGLWidgets.so.6:_ZN13QOpenGLWidget10paintEventEP11QPaintEvent
 libQt6OpenGLWidgets.so.6:_ZN13QOpenGLWidget11doneCurrentEv
 libQt6OpenGLWidgets.so.6:_ZN13QOpenGLWidget11makeCurrentENS_12TargetBufferE
@@ -17373,7 +17375,7 @@ libQt6OpenGLWidgets.so.6:_ZThn16_NK13QOpenGLWidget10redirectedEP6QPoint
 libQt6OpenGLWidgets.so.6:_ZThn16_NK13QOpenGLWidget11paintEngineEv
 libQt6OpenGLWidgets.so.6:_ZThn16_NK13QOpenGLWidget6metricEN12QPaintDevice17PaintDeviceMetricE
 libQt6PrintSupport.so.6:Qt_6
-libQt6PrintSupport.so.6:Qt_6.6_PRIVATE_API
+libQt6PrintSupport.so.6:Qt_6_PRIVATE_API
 libQt6PrintSupport.so.6:_Z49qRegisterNormalizedMetaType_QCUPSSupport__PageSetRK10QByteArray
 libQt6PrintSupport.so.6:_Z52qRegisterNormalizedMetaType_QCUPSSupport__BannerPageRK10QByteArray
 libQt6PrintSupport.so.6:_Z54qRegisterNormalizedMetaType_QCUPSSupport__JobHoldUntilRK10QByteArray
@@ -17670,6 +17672,7 @@ libQt6PrintSupport.so.6:_ZNK12QPrinterInfo8locationEv
 libQt6PrintSupport.so.6:_ZNK12QPrinterInfo9isDefaultEv
 libQt6PrintSupport.so.6:_ZNK15QPdfPrintEngine6metricEN12QPaintDevice17PaintDeviceMetricE
 libQt6PrintSupport.so.6:_ZNK15QPdfPrintEngine8propertyEN12QPrintEngine22PrintEnginePropertyKeyE
+libQt6PrintSupport.so.6:_ZNK15QPrinterPrivate11previewModeEv
 libQt6PrintSupport.so.6:_ZNK15QPrinterPrivate12previewPagesEv
 libQt6PrintSupport.so.6:_ZNK16QPageSetupDialog10metaObjectEv
 libQt6PrintSupport.so.6:_ZNK17QAlphaPaintEngine12continueCallEv
@@ -17784,7 +17787,7 @@ libQt6PrintSupport.so.6:_ZThn32_NK15QPdfPrintEngine8propertyEN12QPrintEngine22Pr
 libQt6PrintSupport.so.6:_Zls6QDebugRK12QPrintDevice
 libQt6PrintSupport.so.6:_Zls6QDebugRK12QPrinterInfo
 libQt6Sql.so.6:Qt_6
-libQt6Sql.so.6:Qt_6.6_PRIVATE_API
+libQt6Sql.so.6:Qt_6_PRIVATE_API
 libQt6Sql.so.6:_ZN10QSqlDriver11cancelQueryEv
 libQt6Sql.so.6:_ZN10QSqlDriver11qt_metacallEN11QMetaObject4CallEiPPv
 libQt6Sql.so.6:_ZN10QSqlDriver11qt_metacastEPKc
@@ -18248,7 +18251,7 @@ libQt6Sql.so.6:_Zls6QDebugRK12QSqlDatabase
 libQt6Sql.so.6:_Zls6QDebugRK9QSqlError
 libQt6Sql.so.6:_Zls6QDebugRK9QSqlField
 libQt6Test.so.6:Qt_6
-libQt6Test.so.6:Qt_6.6_PRIVATE_API
+libQt6Test.so.6:Qt_6_PRIVATE_API
 libQt6Test.so.6:_ZN10QTestTable15globalTestTableEv
 libQt6Test.so.6:_ZN10QTestTable16currentTestTableEv
 libQt6Test.so.6:_ZN10QTestTable20clearGlobalTestTableEv
@@ -18484,7 +18487,7 @@ libQt6Test.so.6:_ZNK9QTestData6parentEv
 libQt6Test.so.6:_ZNK9QTestData7dataTagEv
 libQt6Test.so.6:_ZNK9QTestData9dataCountEv
 libQt6Widgets.so.6:Qt_6
-libQt6Widgets.so.6:Qt_6.6_PRIVATE_API
+libQt6Widgets.so.6:Qt_6_PRIVATE_API
 libQt6Widgets.so.6:_Z11qFadeEffectP7QWidgeti
 libQt6Widgets.so.6:_Z12qt_blurImageP8QPainterR6QImagedbbi
 libQt6Widgets.so.6:_Z12qt_blurImageR6QImagedbi
@@ -20996,6 +20999,7 @@ libQt6Widgets.so.6:_ZN16QTreeViewPrivate15removeViewItemsEii
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate16updateScrollBarsEv
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate17_q_columnsRemovedERK11QModelIndexii
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate17_q_modelDestroyedEv
+libQt6Widgets.so.6:_ZN16QTreeViewPrivate19updateAccessibilityEv
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate22_q_modelAboutToBeResetEv
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate22beginAnimatedOperationEv
 libQt6Widgets.so.6:_ZN16QTreeViewPrivate23_q_endAnimatedOperationEv
@@ -24491,8 +24495,9 @@ libQt6Widgets.so.6:_ZNK14QWidgetPrivate22_q_closestWindowHandleEv
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate22childAtRecursiveHelperERK6QPointb
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate22subtractOpaqueChildrenER7QRegionRK5QRect
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate22subtractOpaqueSiblingsER7QRegionPbb
-libQt6Widgets.so.6:_ZNK14QWidgetPrivate23hasChildWithFocusPolicyEN2Qt11FocusPolicyEPK7QWidget
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate24shouldDiscardSyncRequestEv
+libQt6Widgets.so.6:_ZNK14QWidgetPrivate35closestParentWidgetWithWindowHandleEv
+libQt6Widgets.so.6:_ZNK14QWidgetPrivate3rhiEv
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate8clipRectEv
 libQt6Widgets.so.6:_ZNK14QWidgetPrivate9localFontEv
 libQt6Widgets.so.6:_ZNK15QAbstractButton10autoRepeatEv
@@ -26509,7 +26514,7 @@ libQt6XcbQpa.so.6:_ZThn8_N15QXcbIntegrationD1Ev
 libQt6XcbQpa.so.6:_ZThn8_NK15QXcbIntegration19createOpenGLContextEP15__GLXcontextRecPvP14QOpenGLContext
 libQt6XcbQpa.so.6:_Zls6QDebugPK10QXcbScreen
 libQt6Xml.so.6:Qt_6
-libQt6Xml.so.6:Qt_6.6_PRIVATE_API
+libQt6Xml.so.6:Qt_6_PRIVATE_API
 libQt6Xml.so.6:_ZN10QDomEntityC1EP17QDomEntityPrivate
 libQt6Xml.so.6:_ZN10QDomEntityC1ERKS_
 libQt6Xml.so.6:_ZN10QDomEntityC1Ev
