@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.6.3
-Release  : 90
+Release  : 91
 URL      : https://download.qt.io/official_releases/qt/6.6/6.6.3/submodules/qtbase-everywhere-src-6.6.3.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.3/submodules/qtbase-everywhere-src-6.6.3.tar.xz
 Summary  : @pkgconfig_description@
@@ -205,7 +205,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1711462913
+export SOURCE_DATE_EPOCH=1711468169
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -314,7 +314,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1711462913
+export SOURCE_DATE_EPOCH=1711468169
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -400,11 +400,6 @@ GOAMD64=v2
 pushd clr-build
 DESTDIR=%{buildroot} cmake --install .
 popd
-## Remove excluded files
-rm -f %{buildroot}*/usr/bin/qdbuscpp2xml
-rm -f %{buildroot}*/usr/bin/qdbusxml2cpp
-rm -f %{buildroot}*/usr/bin/qmake
-rm -f %{buildroot}*/usr/bin/qtpaths
 ## install_append content
 rm -f %{buildroot}/usr/bin/haswell/*.pl
 
@@ -424,6 +419,7 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/bin/qt-cmake
 /usr/bin/qt-cmake-create
 /usr/bin/qt-configure-module
+/usr/bin/qtpaths
 /usr/bin/qtpaths6
 
 %files data
@@ -558,6 +554,9 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 
 %files dev
 %defattr(-,root,root,-)
+/usr/bin/qdbuscpp2xml
+/usr/bin/qdbusxml2cpp
+/usr/bin/qmake
 /usr/include/QtConcurrent/QtConcurrent
 /usr/include/QtConcurrent/QtConcurrentDepends
 /usr/include/QtConcurrent/QtConcurrentFilter
