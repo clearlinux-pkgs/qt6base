@@ -3,8 +3,11 @@ libEGL.so.1
 libGLX.so.0
 libOpenGL.so.0
 libX11.so.6
+libatk-1.0.so.0
 libbrotlidec.so.1
 libc.so.6
+libcairo-gobject.so.2
+libcairo.so.2
 libcrypto.so.3
 libcups.so.2
 libdbus-1.so.3
@@ -20,8 +23,10 @@ libgio-2.0.so.0
 libglib-2.0.so.0
 libgobject-2.0.so.0
 libgssapi_krb5.so.2
+libgthread-2.0.so.0
 libgtk-3.so.0
 libharfbuzz.so.0
+libicudata.so.73
 libicui18n.so.73
 libicuuc.so.73
 libinput.so.10
@@ -31,10 +36,12 @@ libmariadb.so.3
 libmd4c.so.0
 libmtdev.so.1
 libpango-1.0.so.0
+libpangocairo-1.0.so.0
 libpcre2-16.so.0
 libpng16.so.16
 libpq.so.5
 libproxy.so.1
+libresolv.so.2
 libsqlite3.so.0
 libssl.so.3
 libstdc++.so.6

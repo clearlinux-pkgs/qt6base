@@ -1,0 +1,11 @@
+--- qtbase-everywhere-src-6.7.1/mkspecs/common/gcc-base.conf~	2024-05-08 09:42:08.000000000 +0000
++++ qtbase-everywhere-src-6.7.1/mkspecs/common/gcc-base.conf	2024-05-28 20:50:37.112094331 +0000
+@@ -50,7 +50,7 @@
+ QMAKE_CFLAGS_HIDESYMS      += -fvisibility=hidden
+ QMAKE_CFLAGS_EXCEPTIONS_OFF += -fno-exceptions
+ QMAKE_CFLAGS_SPLIT_SECTIONS += -ffunction-sections -fdata-sections
+-QMAKE_CFLAGS_LTCG           = -flto -fno-fat-lto-objects
++QMAKE_CFLAGS_LTCG           = -flto -ffat-lto-objects
+ QMAKE_CFLAGS_LTCG_FATOBJECTS = -ffat-lto-objects
+ QMAKE_CFLAGS_DISABLE_LTCG   = -fno-lto
+ QMAKE_CFLAGS_SHSTK          = -mshstk
