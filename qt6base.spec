@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.7.2
-Release  : 97
+Release  : 98
 URL      : https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.tar.xz
 Summary  : @pkgconfig_description@
@@ -197,7 +197,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1718924054
+export SOURCE_DATE_EPOCH=1718928461
 unset LD_AS_NEEDED
 mkdir -p clr-build
 pushd clr-build
@@ -310,7 +310,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1718924054
+export SOURCE_DATE_EPOCH=1718928461
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -353,6 +353,7 @@ cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/gradle/LICENSE %{b
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/harfbuzz-ng/COPYING %{buildroot}/usr/share/package-licenses/qt6base/63eafc680e50e29f1eb7d84fb6df5233c24643da || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/iaccessible2/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/ba3bd36a0ef297a2572863c14637ff032a55d29b || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/icc/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/af6b93eb335e20dd1fd54208f939dd06042c53d2 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/aac9f4502a4eee59766f931d061b764e3f27dbc8 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/ijg-license.txt %{buildroot}/usr/share/package-licenses/qt6base/0811e569f3c097c2b2af0f0f35562b232b05d1d4 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/PSL-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0 || :
 cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/src/LICENSE.chromium %{buildroot}/usr/share/package-licenses/qt6base/73187e456b0901438d4982e4fcb4391a0e7dadef || :
@@ -4379,6 +4380,7 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/share/package-licenses/qt6base/99fccba07bdc277439b88e03af273819d29764c7
 /usr/share/package-licenses/qt6base/9b358a3bb3c510255f375406df8ce40d7e83edfb
 /usr/share/package-licenses/qt6base/9e132ef44ef2f5e72f4e3681765591005694515e
+/usr/share/package-licenses/qt6base/aac9f4502a4eee59766f931d061b764e3f27dbc8
 /usr/share/package-licenses/qt6base/adcc167d614e95a64b755f09d48b61ba85d6e104
 /usr/share/package-licenses/qt6base/af6b93eb335e20dd1fd54208f939dd06042c53d2
 /usr/share/package-licenses/qt6base/b073f11f0c81a95ab5e32aa6b5d23a5955a95274
