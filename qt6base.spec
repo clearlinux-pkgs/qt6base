@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.7.3
-Release  : 102
+Release  : 103
 URL      : https://download.qt.io/official_releases/qt/6.7/6.7.3/submodules/qtbase-everywhere-src-6.7.3.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.7/6.7.3/submodules/qtbase-everywhere-src-6.7.3.tar.xz
 Summary  : @pkgconfig_description@
@@ -200,7 +200,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1727804938
+export SOURCE_DATE_EPOCH=1727826457
 unset LD_AS_NEEDED
 mkdir -p clr-build
 pushd clr-build
@@ -315,7 +315,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1727804938
+export SOURCE_DATE_EPOCH=1727826457
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -450,6 +450,99 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 /usr/share/qt6/doc/config/exampleurl-qtwebchannel.qdocconf
 /usr/share/qt6/doc/config/exampleurl-qtwebengine.qdocconf
 /usr/share/qt6/doc/config/exampleurl-qtwebsockets.qdocconf
+/usr/share/qt6/doc/config/exampleurl-qtwebview.qdocconf
+/usr/share/qt6/doc/config/exampleurl-qtwinextras.qdocconf
+/usr/share/qt6/doc/config/exampleurl-qtx11extras.qdocconf
+/usr/share/qt6/doc/config/exampleurl-qtxmlpatterns.qdocconf
+/usr/share/qt6/doc/global/compat.qdocconf
+/usr/share/qt6/doc/global/config.qdocconf
+/usr/share/qt6/doc/global/externalsites.qdocconf
+/usr/share/qt6/doc/global/externalsites/external-resources.qdoc
+/usr/share/qt6/doc/global/externalsites/qt-webpages.qdoc
+/usr/share/qt6/doc/global/externalsites/qtcreator.qdoc
+/usr/share/qt6/doc/global/externalsites/qtdesignstudio.qdoc
+/usr/share/qt6/doc/global/externalsites/rfc.qdoc
+/usr/share/qt6/doc/global/fileextensions.qdocconf
+/usr/share/qt6/doc/global/html-config.qdocconf
+/usr/share/qt6/doc/global/html-footer-online.qdocconf
+/usr/share/qt6/doc/global/html-footer.qdocconf
+/usr/share/qt6/doc/global/html-header-offline.qdocconf
+/usr/share/qt6/doc/global/html-header-online.qdocconf
+/usr/share/qt6/doc/global/htmltabs.qdocconf
+/usr/share/qt6/doc/global/includes-online/search.qdoc
+/usr/share/qt6/doc/global/includes/cli-build-cmake.qdocinc
+/usr/share/qt6/doc/global/includes/corelib/port-from-qregexp.qdocinc
+/usr/share/qt6/doc/global/includes/examples-run.qdocinc
+/usr/share/qt6/doc/global/includes/module-use.qdocinc
+/usr/share/qt6/doc/global/includes/standardpath/functiondocs.qdocinc
+/usr/share/qt6/doc/global/macros-online.qdocconf
+/usr/share/qt6/doc/global/macros.qdocconf
+/usr/share/qt6/doc/global/manifest-meta.qdocconf
+/usr/share/qt6/doc/global/qt-cpp-defines.qdocconf
+/usr/share/qt6/doc/global/qt-html-templates-offline-simple.qdocconf
+/usr/share/qt6/doc/global/qt-html-templates-offline.qdocconf
+/usr/share/qt6/doc/global/qt-html-templates-online.qdocconf
+/usr/share/qt6/doc/global/qt-module-defaults-offline.qdocconf
+/usr/share/qt6/doc/global/qt-module-defaults-online-commercial.qdocconf
+/usr/share/qt6/doc/global/qt-module-defaults-online.qdocconf
+/usr/share/qt6/doc/global/qt-module-defaults.qdocconf
+/usr/share/qt6/doc/global/snippets/code/doc_src_port_from_qregexp.cpp
+/usr/share/qt6/doc/global/template/images/Qt-dark_gradient.png
+/usr/share/qt6/doc/global/template/images/Qt-footer-bg.jpg
+/usr/share/qt6/doc/global/template/images/Qt-footer_shadow.png
+/usr/share/qt6/doc/global/template/images/Qt-gradient.png
+/usr/share/qt6/doc/global/template/images/Qt-header-bg.jpg
+/usr/share/qt6/doc/global/template/images/Qt-logo.png
+/usr/share/qt6/doc/global/template/images/arrow.png
+/usr/share/qt6/doc/global/template/images/arrow_bc.png
+/usr/share/qt6/doc/global/template/images/arrow_down.png
+/usr/share/qt6/doc/global/template/images/bg_l.png
+/usr/share/qt6/doc/global/template/images/bg_l_blank.png
+/usr/share/qt6/doc/global/template/images/bg_ll_blank.png
+/usr/share/qt6/doc/global/template/images/bg_r.png
+/usr/share/qt6/doc/global/template/images/bg_ul_blank.png
+/usr/share/qt6/doc/global/template/images/bgrContent.png
+/usr/share/qt6/doc/global/template/images/blu_dot.png
+/usr/share/qt6/doc/global/template/images/box_bg.png
+/usr/share/qt6/doc/global/template/images/breadcrumb.png
+/usr/share/qt6/doc/global/template/images/btn_next.png
+/usr/share/qt6/doc/global/template/images/btn_prev.png
+/usr/share/qt6/doc/global/template/images/bullet_dn.png
+/usr/share/qt6/doc/global/template/images/bullet_gt.png
+/usr/share/qt6/doc/global/template/images/bullet_sq.png
+/usr/share/qt6/doc/global/template/images/bullet_up.png
+/usr/share/qt6/doc/global/template/images/feedbackground.png
+/usr/share/qt6/doc/global/template/images/header_bg.png
+/usr/share/qt6/doc/global/template/images/home.png
+/usr/share/qt6/doc/global/template/images/horBar.png
+/usr/share/qt6/doc/global/template/images/ico_note.png
+/usr/share/qt6/doc/global/template/images/ico_note_attention.png
+/usr/share/qt6/doc/global/template/images/ico_out.png
+/usr/share/qt6/doc/global/template/images/logo.png
+/usr/share/qt6/doc/global/template/images/page.png
+/usr/share/qt6/doc/global/template/images/page_bg.png
+/usr/share/qt6/doc/global/template/images/spinner.gif
+/usr/share/qt6/doc/global/template/images/sprites-combined.png
+/usr/share/qt6/doc/global/template/scripts/extras.js
+/usr/share/qt6/doc/global/template/scripts/main.js
+/usr/share/qt6/doc/global/template/style/cookie-confirm.css
+/usr/share/qt6/doc/global/template/style/cookiebar-x.png
+/usr/share/qt6/doc/global/template/style/doc_search.png
+/usr/share/qt6/doc/global/template/style/gsc.css
+/usr/share/qt6/doc/global/template/style/htmltabs.css
+/usr/share/qt6/doc/global/template/style/icomoon.eot
+/usr/share/qt6/doc/global/template/style/icomoon.svg
+/usr/share/qt6/doc/global/template/style/icomoon.ttf
+/usr/share/qt6/doc/global/template/style/icomoon.woff
+/usr/share/qt6/doc/global/template/style/list_arrow.png
+/usr/share/qt6/doc/global/template/style/list_expand.png
+/usr/share/qt6/doc/global/template/style/offline-dark.css
+/usr/share/qt6/doc/global/template/style/offline-simple.css
+/usr/share/qt6/doc/global/template/style/offline.css
+/usr/share/qt6/doc/global/template/style/online.css
+/usr/share/qt6/doc/global/template/style/tech_preview.svg
+/usr/share/qt6/doc/global/template/style/theqtcompany.png
+/usr/share/qt6/doc/global/warninglimit.qdocconf
 
 %files dev
 %defattr(-,root,root,-)
