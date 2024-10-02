@@ -5,3 +5,4 @@ libxkbcommon-dev
 Vulkan-Headers-dev
 qt6shadertools-dev
 mesa-dev
+cups-dev
