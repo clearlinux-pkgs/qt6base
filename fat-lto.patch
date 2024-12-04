@@ -1,14 +1,14 @@
-From bd17d34607ba66bcd5f7f7b3ad64d67e98928170 Mon Sep 17 00:00:00 2001
+From 9a928260777e761c0a1f01878a5336a44f8dd8a1 Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Fri, 22 Nov 2024 15:28:09 -0800
-Subject: [PATCH] default fat lto objects
+Subject: [PATCH 2/2] default fat lto objects
 
 ---
  mkspecs/common/gcc-base.conf | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/mkspecs/common/gcc-base.conf b/mkspecs/common/gcc-base.conf
-index ea022878..2dbb69e0 100644
+index ae583262..bbff7e33 100644
 --- a/mkspecs/common/gcc-base.conf
 +++ b/mkspecs/common/gcc-base.conf
 @@ -50,7 +50,7 @@ QMAKE_CFLAGS_YACC          += -Wno-unused -Wno-parentheses
@@ -21,5 +21,5 @@ index ea022878..2dbb69e0 100644
  QMAKE_CFLAGS_DISABLE_LTCG   = -fno-lto
  QMAKE_CFLAGS_SHSTK          = -mshstk
 -- 
-2.47.0
+2.47.1
 

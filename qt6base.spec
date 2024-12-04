@@ -8,12 +8,12 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.8.0
-Release  : 107
-URL      : https://download.qt.io/official_releases/qt/6.8/6.8.0/submodules/qtbase-everywhere-src-6.8.0.zip
-Source0  : https://download.qt.io/official_releases/qt/6.8/6.8.0/submodules/qtbase-everywhere-src-6.8.0.zip
+Release  : 108
+URL      : https://download.qt.io/official_releases/qt/6.8/6.8.0/submodules/qtbase-everywhere-src-6.8.0.tar.xz
+Source0  : https://download.qt.io/official_releases/qt/6.8/6.8.0/submodules/qtbase-everywhere-src-6.8.0.tar.xz
 Summary  : @pkgconfig_description@
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause BSL-1.0 CC0-1.0 GPL-2.0 GPL-3.0 ISC LGPL-3.0 MIT MIT-feh Zlib
+License  : Apache-2.0 Artistic-2.0 BSD-2-Clause BSD-3-Clause BSL-1.0 CC0-1.0 GFDL-1.3 GPL-2.0 GPL-3.0 IJG ISC LGPL-3.0 MIT MIT-feh MPL-2.0-no-copyleft-exception OFL-1.0 W3C-19980720 Zlib bzip2-1.0.6 libpng-2.0
 Requires: qt6base-data = %{version}-%{release}
 Requires: qt6base-lib = %{version}-%{release}
 Requires: qt6base-libexec = %{version}-%{release}
@@ -227,7 +227,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1732582009
+export SOURCE_DATE_EPOCH=1733276270
 unset LD_AS_NEEDED
 mkdir -p clr-build
 pushd clr-build
@@ -342,7 +342,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1732582009
+export SOURCE_DATE_EPOCH=1733276270
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
@@ -357,49 +357,65 @@ rm -rf %{buildroot}
 #popd
 ## install_prepend end
 mkdir -p %{buildroot}/usr/share/package-licenses/qt6base
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/Apache-2.0.txt %{buildroot}/usr/share/package-licenses/qt6base/1c619b057a9bf7a8234b3105fcfb5b375e749db1 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/qt6base/79453f55fa8ee32d7b95581473edcbfd043e088f || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/dc8f2e570bf431427dbc3bab9d4d551b53a60208 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/qt6base/dc8f2e570bf431427dbc3bab9d4d551b53a60208 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/7713a1753ce88f2c7e6b054ecc8e4c786df76300 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/c70af14df11e3908dfc10397b1ba4b1f346661f3 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/a9efcaa184cbb34fdc2f9ba3cfb5cb726e21eee3 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/a9efcaa184cbb34fdc2f9ba3cfb5cb726e21eee3 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/qt6base/b31da5a75ef0821e013c5f5c3c3e3665ab20164b || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/D3D12MemoryAllocator/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/961ae9eb43b42bd65bc8f28f1d41b1d83a9504fd || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/VulkanMemoryAllocator/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/230c53f2a6c1e285de02ec6a5d446a063a4a67b1 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/android/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/03d7f2ea52065fb4c36bfb8ca6be4eb8993b2366 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/blake2/COPYING %{buildroot}/usr/share/package-licenses/qt6base/6d3dd30c160e250e4c905e3b7f3f9ff4ec53258d || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/double-conversion/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/2ea719ed75f4269728fbddcb710cbcd1a936a99c || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/easing/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/2b5785944a0c1e4aec38e9d8e81d7cd7f1b60441 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/forkfd/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/c9397cfedbbd2bfe349269d617bf98ba7b8ed88f || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/BDF-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/243bbc63a053958a0f3e5abf9a198f66b0f4d2c8 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/PCF-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/e656aee6cc2a5b99f5545e9a51c10bb75d0f2f7f || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/docs/GPLv2.TXT %{buildroot}/usr/share/package-licenses/qt6base/5687bf0cb57bc747082c17af5a88fca83d7b20b4 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/gradle/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/1d3daad7c9c12536d29d46c62666aa48b3bebe6f || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/iaccessible2/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/3564ed3a53dbca082c8e9662228391981abfb694 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/icc/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/c65ace23d529a2258b9f55e7f98525960dbc4a38 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/b4ee4c3fc5594e7f28374f2e293e64999a2e5f3e || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/src/LICENSE.chromium %{buildroot}/usr/share/package-licenses/qt6base/5f5fd5eb1f1387d68b2aaee49e1bc0dc9d3f91ef || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/md4c/LICENSE.md %{buildroot}/usr/share/package-licenses/qt6base/eba01bbee5e1b0265569d983d96cd2a64c62065a || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/pixman/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/1708a2ad814b869e4548e31e7094fb80270151a1 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/rfc6234/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/5fe951ffd768f3292296b733ffdbb7772b877049 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/sha3/CC0_LICENSE %{buildroot}/usr/share/package-licenses/qt6base/a74c65b67b20d459c72e2310dacbc29ba848a0f8 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/tinycbor/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/b7851116e600bacf08e10897285ac452acd7ae0c || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/xcb/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/bd9dcb2660b628b8a8d58b12a2d72a0767ee3586 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/zlib/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/36978e6efc9e342d8fb198d091bd001252ff1157 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/corelib/kernel/QEVENTDISPATCHER_CF_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/82b8ffbcde46c0517a6fe56fd74bc61a4dbfa96c || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/dbus/LIBDBUS-1-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/2ae886fe50c66cbefdd5f3e04a21dd16b02a884e || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/painting/XCONSORTIUM_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/6dc950c45c338898eba3ecaf0f884c467e32271d || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/rhi/MiniEngine_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/cc723e94893e202893b53e75b60ab7bab542f07b || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/text/AGLFN_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/20a153dd16baf11d3040d6a78f0d60e084f0c652 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/vulkan/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/409211215c0cb5b4ebcdd9b73a46a70041dd1c4c || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/plugins/platforms/cocoa/COCOA_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/82b8ffbcde46c0517a6fe56fd74bc61a4dbfa96c || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/catch2/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/bc3c4d41d4cc7753bea8e7a77fdb7cd384adbb59 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/cycle/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/0611b2f9143d4f6b21f4ffb870491aafd4fb4ae0 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/manual/rhi/shared/imgui/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/47b573e3824cd5e02a1a3ae99e2735b49e0256e4 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/manual/rhi/shared/imgui/imgui/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/5d42806c2393742fb5238c4a7ed5c229af1ac553 || :
-cp %{_builddir}/qtbase-everywhere-src-%{version}/util/gradientgen/WEBGRADIENTS_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/0cad114a38b63f2781b9bd06696be58112a98aff || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/Apache-2.0.txt %{buildroot}/usr/share/package-licenses/qt6base/9e132ef44ef2f5e72f4e3681765591005694515e || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/qt6base/b073f11f0c81a95ab5e32aa6b5d23a5955a95274 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/qt6base/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GFDL-1.3-no-invariants-only.txt %{buildroot}/usr/share/package-licenses/qt6base/715f995f11805ee85601834220c43b082f457ea3 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6base/f45ee1c765646813b442ca58de72e20a64a7ddba || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt %{buildroot}/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/qt6base/9b358a3bb3c510255f375406df8ce40d7e83edfb || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/cmake/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/qt6base/ff3ed70db4739b3c6747c7f624fe2bad70802987 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/cmake/3rdparty/kwin/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/qt6base/ff3ed70db4739b3c6747c7f624fe2bad70802987 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/D3D12MemoryAllocator/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/eaf72de849e84adcc0aef922d7e5b6520c0f6fcf || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/VulkanMemoryAllocator/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/27435c9c4d0f840bed7a8bf778aae49af801273a || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/android/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/b622f8ec37b3b644621a5f5f672c41ab286ca5d9 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/blake2/COPYING %{buildroot}/usr/share/package-licenses/qt6base/49fe798664f91fe248f440e7f95f1d244d422746 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/double-conversion/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/8d434c9c1704b544a8b0652efbc323380b67f9bc || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/easing/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/adcc167d614e95a64b755f09d48b61ba85d6e104 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/forkfd/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/8fa90a82c684d365e3ee08e257ddfeb11a34daab || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/BDF-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/1ff1aac950759024e9a9f72d47d394e7b4452c6a || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/PCF-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/ce2ca4cdcf14ce68d39aaec128c07a0b520cbc70 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/ZLIB-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/c3cd964db231b42526c782d5ad7f8d564269b6d5 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/freetype/docs/GPLv2.TXT %{buildroot}/usr/share/package-licenses/qt6base/dac7127c82749e3107b53530289e1cd548860868 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/harfbuzz-ng/COPYING %{buildroot}/usr/share/package-licenses/qt6base/63eafc680e50e29f1eb7d84fb6df5233c24643da || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/iaccessible2/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/ba3bd36a0ef297a2572863c14637ff032a55d29b || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/icc/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/af6b93eb335e20dd1fd54208f939dd06042c53d2 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/aac9f4502a4eee59766f931d061b764e3f27dbc8 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libjpeg/ijg-license.txt %{buildroot}/usr/share/package-licenses/qt6base/0811e569f3c097c2b2af0f0f35562b232b05d1d4 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpng/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/570f5344ea5facacb5e0bbb3fe4e0674189a5f0e || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/PSL-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/libpsl/src/LICENSE.chromium %{buildroot}/usr/share/package-licenses/qt6base/73187e456b0901438d4982e4fcb4391a0e7dadef || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/md4c/LICENSE.md %{buildroot}/usr/share/package-licenses/qt6base/90846c5a4d1373eb1dfa01886ce192b2674db511 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/pcre2/LICENCE-SLJIT %{buildroot}/usr/share/package-licenses/qt6base/e9cb7b4dfa8168c3e4041aa6dc2c48a619f3b76b || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/pixman/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/16da0e0dcdc8ca9463ff2b8cb37072ee522b0924 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/rfc6234/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/f62f428fcb4bca5ae06b01409d5a5923163ce4dc || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/sha3/BRG_ENDIAN_LICENSE %{buildroot}/usr/share/package-licenses/qt6base/0446b384f361f9601238bc2f2e7bd7a833b99288 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/sha3/CC0_LICENSE %{buildroot}/usr/share/package-licenses/qt6base/60f8838aed230fff6697f59ea3a732f18c723c3d || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/tinycbor/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/744aeb214e5bd02d894c0390cb505be56847b6be || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/wasm/DEJAVU-LICENSE %{buildroot}/usr/share/package-licenses/qt6base/2cba132501cc69b943061ac075153ad475c7e72a || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/xcb/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/e35a38f4b6d9b8fa47bdc313b42ea1930b94a72f || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/3rdparty/zlib/LICENSE %{buildroot}/usr/share/package-licenses/qt6base/dc3faa3029d99c3532e8262c2452afd5e11e4918 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/corelib/kernel/QEVENTDISPATCHER_CF_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/fee647168efa75e63122586106fb721b55ee7651 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/dbus/LIBDBUS-1-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/5afaf3263848300e6daf9a5cc3761eddb9969946 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/opengl/KHRONOS_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/6c978ae82e85830764c8683ee4df810c4360c547 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/painting/QIMAGETRANSFORM_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/c7e2ab75c7671491b36e306057bf0f14aa62845c || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/painting/XCONSORTIUM_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/ce3735fb4741c499f9ddf89f0dfc0eb9964d1e25 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/rhi/MiniEngine_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/11a8fec351554e8f6c3f4dac5a1f4049dd467ba8 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/text/AGLFN_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/e87d28b43a11605664d10cc7190e454e256684f7 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/gui/vulkan/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/262a1be5927981cca4f273754dd603ecdc7bb659 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/plugins/platforms/cocoa/COCOA_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/fee647168efa75e63122586106fb721b55ee7651 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/catch2/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/3cba29011be2b9d59f6204d6fa0a386b1b2dbd90 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/cycle/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/c0955b5351b1dcafdd0b9bb2d7e84fe0e3d731ca || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/linux/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/99fccba07bdc277439b88e03af273819d29764c7 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/src/testlib/3rdparty/valgrind/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/c7ace52554ee70719c6b493bf87781cdabb6549a || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/auto/corelib/serialization/qxmlstream/XML-Test-Suite-LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/d134e46110f1cb9253ba4542a2d8770179429da4 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/manual/rhi/shared/imgui/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/2b8b815229aa8a61e483fb4ba0588b8b6c491890 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/tests/manual/rhi/shared/imgui/imgui/LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/0fb5bee742924bb47ce9a75ca1a91dc37f962152 || :
+cp %{_builddir}/qtbase-everywhere-src-%{version}/util/gradientgen/WEBGRADIENTS_LICENSE.txt %{buildroot}/usr/share/package-licenses/qt6base/69e3487e6a838e7c9357d55578f64d5995f7e711 || :
 export GOAMD64=v2
 pushd ../buildavx2/
 GOAMD64=v3
@@ -4448,46 +4464,61 @@ rm -f %{buildroot}/usr/bin/haswell/*.pl
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/qt6base/03d7f2ea52065fb4c36bfb8ca6be4eb8993b2366
-/usr/share/package-licenses/qt6base/0611b2f9143d4f6b21f4ffb870491aafd4fb4ae0
-/usr/share/package-licenses/qt6base/0cad114a38b63f2781b9bd06696be58112a98aff
-/usr/share/package-licenses/qt6base/1708a2ad814b869e4548e31e7094fb80270151a1
-/usr/share/package-licenses/qt6base/1c619b057a9bf7a8234b3105fcfb5b375e749db1
-/usr/share/package-licenses/qt6base/1d3daad7c9c12536d29d46c62666aa48b3bebe6f
-/usr/share/package-licenses/qt6base/20a153dd16baf11d3040d6a78f0d60e084f0c652
-/usr/share/package-licenses/qt6base/230c53f2a6c1e285de02ec6a5d446a063a4a67b1
-/usr/share/package-licenses/qt6base/243bbc63a053958a0f3e5abf9a198f66b0f4d2c8
-/usr/share/package-licenses/qt6base/2ae886fe50c66cbefdd5f3e04a21dd16b02a884e
-/usr/share/package-licenses/qt6base/2b5785944a0c1e4aec38e9d8e81d7cd7f1b60441
-/usr/share/package-licenses/qt6base/2ea719ed75f4269728fbddcb710cbcd1a936a99c
-/usr/share/package-licenses/qt6base/3564ed3a53dbca082c8e9662228391981abfb694
-/usr/share/package-licenses/qt6base/36978e6efc9e342d8fb198d091bd001252ff1157
-/usr/share/package-licenses/qt6base/409211215c0cb5b4ebcdd9b73a46a70041dd1c4c
-/usr/share/package-licenses/qt6base/47b573e3824cd5e02a1a3ae99e2735b49e0256e4
-/usr/share/package-licenses/qt6base/5687bf0cb57bc747082c17af5a88fca83d7b20b4
-/usr/share/package-licenses/qt6base/5d42806c2393742fb5238c4a7ed5c229af1ac553
-/usr/share/package-licenses/qt6base/5f5fd5eb1f1387d68b2aaee49e1bc0dc9d3f91ef
-/usr/share/package-licenses/qt6base/5fe951ffd768f3292296b733ffdbb7772b877049
-/usr/share/package-licenses/qt6base/6d3dd30c160e250e4c905e3b7f3f9ff4ec53258d
-/usr/share/package-licenses/qt6base/6dc950c45c338898eba3ecaf0f884c467e32271d
-/usr/share/package-licenses/qt6base/7713a1753ce88f2c7e6b054ecc8e4c786df76300
-/usr/share/package-licenses/qt6base/79453f55fa8ee32d7b95581473edcbfd043e088f
-/usr/share/package-licenses/qt6base/82b8ffbcde46c0517a6fe56fd74bc61a4dbfa96c
-/usr/share/package-licenses/qt6base/961ae9eb43b42bd65bc8f28f1d41b1d83a9504fd
-/usr/share/package-licenses/qt6base/a74c65b67b20d459c72e2310dacbc29ba848a0f8
-/usr/share/package-licenses/qt6base/a9efcaa184cbb34fdc2f9ba3cfb5cb726e21eee3
-/usr/share/package-licenses/qt6base/b31da5a75ef0821e013c5f5c3c3e3665ab20164b
-/usr/share/package-licenses/qt6base/b4ee4c3fc5594e7f28374f2e293e64999a2e5f3e
-/usr/share/package-licenses/qt6base/b7851116e600bacf08e10897285ac452acd7ae0c
-/usr/share/package-licenses/qt6base/bc3c4d41d4cc7753bea8e7a77fdb7cd384adbb59
-/usr/share/package-licenses/qt6base/bd9dcb2660b628b8a8d58b12a2d72a0767ee3586
-/usr/share/package-licenses/qt6base/c65ace23d529a2258b9f55e7f98525960dbc4a38
-/usr/share/package-licenses/qt6base/c70af14df11e3908dfc10397b1ba4b1f346661f3
-/usr/share/package-licenses/qt6base/c9397cfedbbd2bfe349269d617bf98ba7b8ed88f
-/usr/share/package-licenses/qt6base/cc723e94893e202893b53e75b60ab7bab542f07b
-/usr/share/package-licenses/qt6base/dc8f2e570bf431427dbc3bab9d4d551b53a60208
-/usr/share/package-licenses/qt6base/e656aee6cc2a5b99f5545e9a51c10bb75d0f2f7f
-/usr/share/package-licenses/qt6base/eba01bbee5e1b0265569d983d96cd2a64c62065a
+/usr/share/package-licenses/qt6base/0446b384f361f9601238bc2f2e7bd7a833b99288
+/usr/share/package-licenses/qt6base/0811e569f3c097c2b2af0f0f35562b232b05d1d4
+/usr/share/package-licenses/qt6base/0fb5bee742924bb47ce9a75ca1a91dc37f962152
+/usr/share/package-licenses/qt6base/11a8fec351554e8f6c3f4dac5a1f4049dd467ba8
+/usr/share/package-licenses/qt6base/16da0e0dcdc8ca9463ff2b8cb37072ee522b0924
+/usr/share/package-licenses/qt6base/1ff1aac950759024e9a9f72d47d394e7b4452c6a
+/usr/share/package-licenses/qt6base/262a1be5927981cca4f273754dd603ecdc7bb659
+/usr/share/package-licenses/qt6base/27435c9c4d0f840bed7a8bf778aae49af801273a
+/usr/share/package-licenses/qt6base/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+/usr/share/package-licenses/qt6base/2cba132501cc69b943061ac075153ad475c7e72a
+/usr/share/package-licenses/qt6base/3cba29011be2b9d59f6204d6fa0a386b1b2dbd90
+/usr/share/package-licenses/qt6base/49fe798664f91fe248f440e7f95f1d244d422746
+/usr/share/package-licenses/qt6base/4cc77b90af91e615a64ae04893fdffa7939db84c
+/usr/share/package-licenses/qt6base/570f5344ea5facacb5e0bbb3fe4e0674189a5f0e
+/usr/share/package-licenses/qt6base/5afaf3263848300e6daf9a5cc3761eddb9969946
+/usr/share/package-licenses/qt6base/60f8838aed230fff6697f59ea3a732f18c723c3d
+/usr/share/package-licenses/qt6base/63eafc680e50e29f1eb7d84fb6df5233c24643da
+/usr/share/package-licenses/qt6base/69800d5834b4442246d1b74bbfe7b5c9dc427a7f
+/usr/share/package-licenses/qt6base/69e3487e6a838e7c9357d55578f64d5995f7e711
+/usr/share/package-licenses/qt6base/6c978ae82e85830764c8683ee4df810c4360c547
+/usr/share/package-licenses/qt6base/715f995f11805ee85601834220c43b082f457ea3
+/usr/share/package-licenses/qt6base/73187e456b0901438d4982e4fcb4391a0e7dadef
+/usr/share/package-licenses/qt6base/744aeb214e5bd02d894c0390cb505be56847b6be
+/usr/share/package-licenses/qt6base/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+/usr/share/package-licenses/qt6base/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+/usr/share/package-licenses/qt6base/8d434c9c1704b544a8b0652efbc323380b67f9bc
+/usr/share/package-licenses/qt6base/8fa90a82c684d365e3ee08e257ddfeb11a34daab
+/usr/share/package-licenses/qt6base/90846c5a4d1373eb1dfa01886ce192b2674db511
+/usr/share/package-licenses/qt6base/99fccba07bdc277439b88e03af273819d29764c7
+/usr/share/package-licenses/qt6base/9b358a3bb3c510255f375406df8ce40d7e83edfb
+/usr/share/package-licenses/qt6base/9e132ef44ef2f5e72f4e3681765591005694515e
+/usr/share/package-licenses/qt6base/aac9f4502a4eee59766f931d061b764e3f27dbc8
+/usr/share/package-licenses/qt6base/adcc167d614e95a64b755f09d48b61ba85d6e104
+/usr/share/package-licenses/qt6base/af6b93eb335e20dd1fd54208f939dd06042c53d2
+/usr/share/package-licenses/qt6base/b073f11f0c81a95ab5e32aa6b5d23a5955a95274
+/usr/share/package-licenses/qt6base/b622f8ec37b3b644621a5f5f672c41ab286ca5d9
+/usr/share/package-licenses/qt6base/ba3bd36a0ef297a2572863c14637ff032a55d29b
+/usr/share/package-licenses/qt6base/c0955b5351b1dcafdd0b9bb2d7e84fe0e3d731ca
+/usr/share/package-licenses/qt6base/c3cd964db231b42526c782d5ad7f8d564269b6d5
+/usr/share/package-licenses/qt6base/c7ace52554ee70719c6b493bf87781cdabb6549a
+/usr/share/package-licenses/qt6base/c7e2ab75c7671491b36e306057bf0f14aa62845c
+/usr/share/package-licenses/qt6base/ce2ca4cdcf14ce68d39aaec128c07a0b520cbc70
+/usr/share/package-licenses/qt6base/ce3735fb4741c499f9ddf89f0dfc0eb9964d1e25
+/usr/share/package-licenses/qt6base/d134e46110f1cb9253ba4542a2d8770179429da4
+/usr/share/package-licenses/qt6base/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0
+/usr/share/package-licenses/qt6base/dac7127c82749e3107b53530289e1cd548860868
+/usr/share/package-licenses/qt6base/dc3faa3029d99c3532e8262c2452afd5e11e4918
+/usr/share/package-licenses/qt6base/e35a38f4b6d9b8fa47bdc313b42ea1930b94a72f
+/usr/share/package-licenses/qt6base/e87d28b43a11605664d10cc7190e454e256684f7
+/usr/share/package-licenses/qt6base/e9cb7b4dfa8168c3e4041aa6dc2c48a619f3b76b
+/usr/share/package-licenses/qt6base/eaf72de849e84adcc0aef922d7e5b6520c0f6fcf
+/usr/share/package-licenses/qt6base/f45ee1c765646813b442ca58de72e20a64a7ddba
+/usr/share/package-licenses/qt6base/f62f428fcb4bca5ae06b01409d5a5923163ce4dc
+/usr/share/package-licenses/qt6base/fee647168efa75e63122586106fb721b55ee7651
+/usr/share/package-licenses/qt6base/ff3ed70db4739b3c6747c7f624fe2bad70802987
 
 %files staticdev
 %defattr(-,root,root,-)

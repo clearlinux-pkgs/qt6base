@@ -1,14 +1,14 @@
-From 661bf8b27f7e181ba3fb84f63be8edfdee81e946 Mon Sep 17 00:00:00 2001
+From c8fd8eecc674258c959493589d48f5c738fd99f5 Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Fri, 22 Nov 2024 15:20:44 -0800
-Subject: [PATCH] backport build fix
+Subject: [PATCH 1/2] backport build fix
 
 ---
  src/gui/platform/unix/qxkbcommon_p.h | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/src/gui/platform/unix/qxkbcommon_p.h b/src/gui/platform/unix/qxkbcommon_p.h
-index 8cb5492b..b7594b42 100644
+index a40d7944..bba5bd44 100644
 --- a/src/gui/platform/unix/qxkbcommon_p.h
 +++ b/src/gui/platform/unix/qxkbcommon_p.h
 @@ -22,6 +22,7 @@
@@ -20,5 +20,5 @@ index 8cb5492b..b7594b42 100644
  #include <qpa/qplatformkeymapper.h>
  
 -- 
-2.47.0
+2.47.1
 
