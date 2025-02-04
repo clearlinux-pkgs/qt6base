@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : qt6base
 Version  : 6.8.2
-Release  : 109
+Release  : 110
 URL      : https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtbase-everywhere-src-6.8.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtbase-everywhere-src-6.8.2.tar.xz
 Summary  : @pkgconfig_description@
@@ -227,7 +227,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1738632356
+export SOURCE_DATE_EPOCH=1738684613
 unset LD_AS_NEEDED
 mkdir -p clr-build
 pushd clr-build
@@ -342,7 +342,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1738632356
+export SOURCE_DATE_EPOCH=1738684613
 rm -rf %{buildroot}
 ## install_prepend content
 #pushd src/openglextensions
