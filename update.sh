@@ -7,7 +7,7 @@ for i in "${pkgs[@]}"; do
     pushd "../${i}"
     git fetch origin
     git reset --hard origin/main
-    make update-versions
+    make update-versions || if [ "$i" != 'qt6base' ]; then exit 1; fi
     make autospec
     make koji
     make koji-waitrepo
